@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Nutricia Mobile App</title>
+    <meta name="description" content="Proyecto Nutricia Mobile — detalle del trabajo de diseño.">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+</head>
+
+<body class="page-light">
+    <div id="page-transition-overlay" style="background-color: var(--color-offwhite-alabaster-01);"></div>
+
+    <!-- MENU-BLANCO -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn" data-transition>WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (PP-ND Matrix) -->
+    <main class="project-main main-container" aria-label="Proyecto Nutricia Desktop">
+        <div class="pp-grid">
+
+            <!-- PNDDT1 -->
+            <h1 class="pxdt1 motion-fade-move-up">Nutricia<br>Desktop App</h1>
+
+            <!-- PNDBT1 (FLAG-ALL-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_ALL_P" data-variant="true">Saved the best for last? I appreciate your thorough
+                    review of my work.<br>...<br>The Nutricia desktop platform was originally conceived as a necessary
+                    counterpart to the mobile app. While the mobile experience focused on patient follow-ups, the clinic
+                    required a dedicated administrative interface to manage that data. However, during the design
+                    process, I identified a deeper systemic issue: the clinic’s internal information was fragmented and
+                    difficult to scale. By taking the initiative to expand the project’s scope, I designed the platform
+                    to function as a centralized hub that unifies their entire internal operations, transforming it from
+                    a simple data manager into a comprehensive solution for the clinic’s growth.</span>
+                <span data-flag="FLAG_ALL_P" data-variant="false">The Nutricia desktop platform was originally conceived
+                    as a necessary counterpart to the mobile app. While the mobile experience focused on patient
+                    follow-ups, the clinic required a dedicated administrative interface to manage that data. However,
+                    during the design process, I identified a deeper systemic issue: the clinic’s internal information
+                    was fragmented and difficult to scale. By taking the initiative to expand the project’s scope, I
+                    designed the platform to function as a centralized hub that unifies their entire internal
+                    operations, transforming it from a simple data manager into a comprehensive solution for the
+                    clinic’s growth.</span>
+            </p>
+
+            <!-- PNDBT2 (FLAG-FIRST-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_FIRST_P" data-variant="true">Great choice to start with.<br>...<br><span
+                        class="destacado">Year:</span> 2022-2023<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> UX/UI Designer</span>
+                <span data-flag="FLAG_FIRST_P" data-variant="false"><span class="destacado">Year:</span>
+                    2022-2023<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> UX/UI Designer</span>
+            </p>
+
+            <!-- PNDBT3 -->
+            <p class="pxbt motion-fade-move-up">
+                <span class="caption">(The following video provides an illustrative introduction to the
+                    project)<br><br></span>
+            </p>
+
+            <!-- PNDF1: L+2 -->
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/NutD/NDF1.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+
+            <!-- PNDBT4: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                Cleanliness is the core protagonist of the app, maintaining strict coherence with the clinical
+                environment. While clarity provides the foundation, the narrative is driven by the vertical line. In an
+                interface dominated by extensive data lists, this verticality projects a sense of order, direction, and
+                progress. The line serves as a universal communicator, accompanying every component and
+                utilizing specific color-coding and positioning to define the character and status of the information at
+                a glance.
+            </p>
+
+            <!-- PNDF2-PNDF4 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/NutD/NDF2.jpg" alt="PNDF2 — NUTD" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutD/NDF3.jpg" alt="PNDF3 — NUTD" loading="lazy">
+            </div>
+
+            <!-- PNDBT5: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                The main page of the Nutricia Desktop interface is a daily calendar designed for precise control over
+                current and future appointments. This module allows staff to schedule consultations directly within the
+                system, bypassing the mobile app for in-site schedules. To ensure professional data management, the
+                platform allows the clinic to generate comprehensive records that uses internal servers.<br><br>The desk
+                app manages vast amounts of data through fully editable information lists, covering nutritionists,
+                patients, spaces, services, and finances. Each equipped with specialized filters for rapid navigation.
+                I implemented a hierarchical permission system where critical registration requests are routed to senior
+                profiles for approval, while every modification is logged to ensure full accountability and traceability
+                across the administrative team.
+            </p>
+
+            <!-- PNDF5-PNDF9 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/NutD/NDF4.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutD/NDF5.jpg" alt="PNDF6 — NUTD" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutD/NDF6.jpg" alt="PNDF7 — NUTD" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutD/NDF7.jpg" alt="PNDF8 — NUTD" loading="lazy">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

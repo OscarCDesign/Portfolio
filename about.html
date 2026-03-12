@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — About</title>
+    <meta name="description" content="Sobre mí — perfil, experiencia y habilidades de diseño.">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Lógica (antes del render) -->
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+
+    <style>
+        body {
+            background-color: var(--color-blue-petroleum-01);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+
+        .barra-hamburger-m {
+            grid-column: 12 / 14;
+            grid-row: 1 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        @media (min-width: 768px) {
+            .barra-hamburger-m {
+                display: none;
+            }
+        }
+
+        /* ABOUT CONTENT GRID */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            grid-auto-rows: auto;
+            /* Permite que el contenedor crezca con el contenido */
+            width: 100%;
+            flex: 1 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: repeat(25, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .about-content {
+                grid-template-columns: repeat(42, 1fr);
+            }
+        }
+
+        /* COLUMNA 1 (Desktop: C3-C27, Tablet: C2-C13, Mobile: C2-C12) */
+        .about-col1 {
+            grid-column: 2 / 13;
+            display: flex;
+            flex-direction: column;
+            padding-top: calc(var(--grid-row-height) * 5);
+        }
+
+        @media (min-width: 768px) {
+            .about-col1 {
+                grid-column: 2 / 14;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*5);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .about-col1 {
+                grid-column: 3 / 28;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*5);
+            }
+        }
+
+        /* COLUMNA 2 (Desktop: C30-C40, Tablet: C16-C24, Mobile: inline primera) */
+        .about-col2 {
+            grid-column: 2 / 13;
+            display: flex;
+            flex-direction: column;
+            padding-top: calc(var(--grid-row-height) * 3);
+        }
+
+        @media (min-width: 768px) {
+            .about-col2 {
+                grid-column: 16 / 25;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*5);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .about-col2 {
+                grid-column: 30 / 41;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*5);
+            }
+        }
+
+        /* Mobile: columnas apiladas */
+        @media (max-width: 767px) {
+            .about-col1 {
+                order: 2;
+                padding-top: calc(var(--grid-row-height) * 5);
+            }
+
+            .about-col2 {
+                order: 1;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height) * 5);
+            }
+        }
+
+        /* Elementos de texto de About */
+        .att {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-size: 18pt;
+            line-height: 23pt;
+            margin-bottom: calc(var(--grid-row-height) * 2);
+        }
+
+        @media (min-width: 768px) {
+            .att {
+                font-size: 28pt;
+                line-height: 30pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .att {
+                font-size: 28pt;
+                line-height: 30pt;
+            }
+        }
+
+        .abt-body2 {
+            color: var(--color-offwhite-alabaster-01);
+            opacity: 0.7;
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 10pt;
+            line-height: 20pt;
+            margin-bottom: calc(var(--grid-row-height) * 1);
+        }
+
+        @media (min-width: 768px) {
+            .abt-body2 {
+                font-size: 12pt;
+                line-height: 22pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .abt-body2 {
+                font-size: 12pt;
+                line-height: 22pt;
+            }
+        }
+
+        .abt-body3 {
+            color: var(--color-offwhite-alabaster-01);
+            opacity: 0.7;
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 10pt;
+            line-height: 20pt;
+            margin-bottom: calc(var(--grid-row-height) * 0);
+        }
+
+        @media (min-width: 768px) {
+            .abt-body3 {
+                font-size: 12pt;
+                line-height: 22pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .abt-body3 {
+                font-size: 12pt;
+                line-height: 22pt;
+            }
+        }
+
+        .abt-body3-orange {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 12pt;
+            line-height: 22pt;
+            margin-bottom: calc(var(--grid-row-height) * 0);
+        }
+
+        @media (min-width: 768px) {
+            .abt-body3-orange {
+                font-size: 12pt;
+                line-height: 22pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .abt-body3-orange {
+                font-size: 12pt;
+                line-height: 22pt;
+            }
+        }
+
+        .abt-body1-orange {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 15pt;
+            font-weight: 700;
+            line-height: 18pt;
+            margin-bottom: calc(var(--grid-row-height) * 0);
+        }
+
+        @media (min-width: 768px) {
+            .abt-body1-orange {
+                font-size: 15pt;
+                line-height: 20pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .abt-body1-orange {
+                font-size: 15pt;
+                line-height: 20pt;
+            }
+        }
+
+        .aml1 {
+            display: block;
+            width: 100%;
+            height: 5pt;
+            background-color: var(--color-orange-terracotta-01);
+            margin-bottom: calc(var(--grid-row-height) * 3);
+            margin-top: calc(var(--grid-row-height) * 2);
+        }
+
+        /* AF0: Frame con borde naranja (Columna 2) */
+        .af0 {
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01);
+            padding: calc(var(--grid-row-height) * 1) calc(100vw / 13);
+            display: flex;
+            flex-direction: column;
+            margin-bottom: calc(var(--grid-row-height) * 3);
+        }
+
+        @media (min-width: 768px) {
+            .af0 {
+                padding: calc(var(--grid-row-height) * 1) calc(100vw / 25);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .af0 {
+                padding: calc(var(--grid-row-height) * 1) calc(100vw / 42);
+            }
+        }
+
+        /* AF1: Frame naranja (imagen) dentro de AF0 */
+        .af1 {
+            background-color: var(--color-orange-terracotta-01);
+            height: calc(var(--grid-row-height) * 11);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: calc(var(--grid-row-height) * 2);
+        }
+
+        .af1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        /* AB1: Botón de CV */
+        .ab1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01) !important;
+            grid-column: 1 / span 4;
+            cursor: pointer;
+            font-family: var(--font-ui);
+            font-weight: 500;
+            font-size: 18pt;
+            color: var(--color-orange-terracotta-01);
+            line-height: normal;
+            text-decoration: none;
+            position: relative;
+            background-color: transparent;
+            transition: background-color 200ms ease, color 200ms ease;
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(var(--grid-row-height) * 3);
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .ab1 {
+                font-size: 20pt;
+            }
+        }
+
+        .ab1:first-child {
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01) !important;
+        }
+
+        .ab1.active {
+            background-color: var(--color-orange-terracotta-01);
+            color: var(--color-blue-petroleum-01);
+            font-weight: 700;
+        }
+
+        .ab1::after {
+            content: '';
+            position: absolute;
+            bottom: 12pt;
+            left: 50%;
+            height: 5pt;
+            width: 60%;
+            background-color: var(--color-offwhite-alabaster-01);
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            transition: transform 200ms var(--motion-ease-out-expo);
+        }
+
+        .ab1:not(.active):hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .destacado {
+            color: var(--color-orange-terracotta-01);
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        @media (min-width: 767px) {
+            .destacado {
+                font-size: 12pt;
+            }
+        }
+
+
+
+        /* Footer*/
+        @media (max-width: 767px) {
+            .footer-item .typo-body-2 {
+                font-size: 10pt;
+                line-height: 15pt;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-item .typo-body-2 {
+                font-size: 10pt;
+                line-height: 15pt;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: calc(100vw / 13);
+            }
+
+            #fbt2 {
+                text-align: left;
+                justify-content: flex-start;
+                margin-top: 8px;
+            }
+
+            #fbt1 {
+                text-align: left;
+            }
+        }
+
+        .footer-container {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body class="page-dark">
+
+    <div id="page-transition-overlay"></div>
+
+    <!-- BARRA -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn active" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <!-- MBG BARRA (Mobile Formula: 7 cols [4/3]) -->
+        <div id="mbg-barra">
+            <a href="about.html" class="mbg-btn">ABOUT</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- CONTENIDO ABOUT -->
+    <main class="about-content main-container" aria-label="Sobre mí">
+        <!-- COLUMNA 2 (aparece primero en mobile: AF0) -->
+        <div class="about-col2">
+            <!-- AF0: frame con borde naranja -->
+            <div class="af0 motion-fade-move-up">
+                <!-- AF1: imagen, 11 líneas -->
+                <div class="af1">
+                    <video autoplay loop muted playsinline preload="metadata"
+                        style="width:100%; height:100%; object-fit:cover;">
+                        <source src="assets/About/AF1.mp4" type="video/mp4">
+                        <img src="assets/About/AF1.jpg" alt="Fallback">
+                    </video>
+                </div>
+                <!-- AB1: Botón CV -->
+                <a href="CV_OscarC..pdf" class="ab1" target="_blank" rel="noopener" download>DOWNLOAD CV</a>
+            </div>
+            <!-- ATT4 + Core Skills -->
+            <div class="motion-fade-move-up">
+                <h2 class="att" id="att4">CORE SKILLS</h2>
+                <!-- ABT10 -->
+                <p class="abt-body3" id="abt10.1">_UX/UI Design</p>
+                <p class="abt-body3" id="abt10.2">_Product Design</p>
+                <p class="abt-body3" id="abt10.3">_Animation</p>
+                <p class="abt-body3" id="abt10.4">_Vibe Coding</p>
+                <p class="abt-body3" id="abt10.5">_User Journeys</p>
+                <p class="abt-body3" id="abt10.6">_Branding</p>
+                <p class="abt-body3" id="abt10.7">_Motion Graphics</p>
+                <p class="abt-body3" id="abt10.8">_Illustration</p>
+                <p class="abt-body3" id="abt10.9">_Storytelling</p>
+                <p class="abt-body3" id="abt10.10">_UX Research and Testing</p>
+                <p class="abt-body3" id="abt10.11" style="margin-bottom: calc(var(--grid-row-height) * 2);">_Content
+                    Creation</p>
+            </div>
+            <!-- ATT5 + Programs -->
+            <div class="motion-fade-move-up">
+                <h2 class="att" id="att5">PROGRAMS</h2>
+                <!-- ABT11 -->
+                <p class="abt-body3" id="abt11.1">_Figma</p>
+                <p class="abt-body3" id="abt11.2">_Creative Cloud</p>
+                <p class="abt-body3" id="abt11.3">_GitHub</p>
+                <p class="abt-body3" id="abt11.4">_Antigravity</p>
+                <p class="abt-body3" id="abt11.5">_Gemini</p>
+                <p class="abt-body3" id="abt11.6">_Claude</p>
+                <p class="abt-body3" id="abt11.8">_Framer</p>
+                <p class="abt-body3" id="abt11.9">_Spline</p>
+                <p class="abt-body3" id="abt11.10">_Asana</p>
+            </div>
+        </div>
+
+        <!-- COLUMNA 1 -->
+        <div class="about-col1">
+            <!-- ATT1 + Backstory -->
+            <div class="motion-fade-move-up">
+                <h2 class="att" id="att1">BACKSTORY</h2>
+                <!-- ABT1 con PROP-LOGIC FLAG-ZERO-P -->
+                <div id="abt1.1">
+                    <p class="abt-body2">
+                        <span data-flag="FLAG_ZERO_P" data-variant="true">You haven't seen any of my projects yet. I see
+                            you're very interested in learning about me, in that case... </span>
+                        <span data-flag="FLAG_ZERO_P" data-variant="false"></span>
+                        I was born in Guadalajara, Mexico (2000), I pursued a degree in Design—not merely as a
+                        craft-focused discipline, but as a strategic framework for architecting sustainable solutions.
+                        My approach is rooted in uncovering the latent needs buried within complex layers of research to
+                        build meaningful user experiences.
+                    </p>
+                    <p class="abt-body2" id="abt1.2">My background divides between Brand Strategy and Product
+                        Design. Experience at a specialized marketing agency sharpened my understanding of brand
+                        positioning
+                        teaching me to desing with an intention;
+                        There for, while you may browse hundreds of portfolios, this one will persist in your memory as
+                        <span class="destacado"> the
+                            orange one</span> or, ideally, as Oscar C. I pivoted
+                        toward scalable UI and rigorous UX Research. My performance during residency led to an immediate
+                        post-grad hire as a Design Partner. Since then, I have spearheaded the end-to-end design
+                        lifecycle
+                        for diverse projects—from initial stakeholder alignment and requirement gathering to
+                        high-fidelity
+                        prototyping and iterative usability testing.
+                    </p>
+                    <p class="abt-body2" id="abt1.3">In my free time, I'm a fan of great stories and creative ideas
+                        (it's
+                        just a way of saying I love watching series, movies, and playing video games). I enjoy being
+                        creative in different ways: drawing, painting, animating, writing, sculpting, and I really
+                        enjoy building LEGOs—though there's little creativity in following an instruction manual.</p>
+                </div>
+            </div>
+
+            <!-- ATT2 + Experience: Ulab -->
+            <div class="motion-fade-move-up">
+                <h2 class="att" id="att2" style="margin-top: calc(var(--grid-row-height) * 2);">EXPERIENCE</h2>
+                <!-- ABT2 (TYPO-BODY-1 naranja) -->
+                <p class="abt-body1-orange" id="abt2" style="margin-top: calc(var(--grid-row-height) * 0);">Ulab ITESO
+                    2022
+                    - Present</p>
+                <!-- ABT3 -->
+                <p class="abt-body3-orange" id="abt3.1">UX/UI Design Partner</p>
+                <p class="abt-body3" id="abt3.2">_UX research for requirement gathering and defining operational
+                    workflow
+                    models.</p>
+                <p class="abt-body3" id="abt3.3">_Develop comprehensive branding systems for both new ventures and
+                    legacy
+                    products.</p>
+                <p class="abt-body3" id="abt3.4">_Create structural wireframes based on data-driven UX analysis and
+                    research
+                    findings.</p>
+                <p class="abt-body3" id="abt3.5">_Design user interfaces for SaaS, B2B, B2C, and CMS platforms.</p>
+                <p class="abt-body3" id="abt3.6">_Perform usability analysis using focus groups and behavioral labs.</p>
+            </div>
+            <!-- Experience: Vadeto -->
+            <div class="motion-fade-move-up">
+                <!-- ABT4 (BODY-1 naranja) -->
+                <p class="abt-body1-orange" id="abt4" style="margin-top: calc(var(--grid-row-height) * 1);">Vadeto Group
+                    2023 - 2024</p>
+                <!-- ABT5 -->
+                <p class="abt-body3-orange" id="abt5.1">Senior Designer</p>
+                <p class="abt-body3" id="abt5.2">_Lead design decisions for the Mexico division.</p>
+                <p class="abt-body3" id="abt5.3">_Design internal and external communication assets.</p>
+                <p class="abt-body3" id="abt5.4">_Create content and visual assets for Amazon, first-party webstores,
+                    and
+                    third-party marketplaces.</p>
+                <p class="abt-body3" id="abt5.5">_Design product packaging and standardized print formats.</p>
+                <p class="abt-body3" id="abt5.6">_Execute professional product photography and high-end photo editing.
+                </p>
+            </div>
+            <!-- Experience: The Right Position -->
+            <div class="motion-fade-move-up">
+                <!-- ABT6 (BODY-1 naranja) -->
+                <p class="abt-body1-orange" id="abt6" style="margin-top: calc(var(--grid-row-height) * 1);">The Right
+                    Position Marketing 2020-2023</p>
+                <!-- ABT7 -->
+                <p class="abt-body3-orange" id="abt7.1">Creative Designer</p>
+                <p class="abt-body3" id="abt7.2">_Create content for diverse social media platforms.</p>
+                <p class="abt-body3" id="abt7.3">_Design banners, packaging, promotional materials, and print formats.
+                </p>
+                <p class="abt-body3" id="abt7.4">_Design products, stands, logos, and complete branding.</p>
+                <p class="abt-body3" id="abt7.5">_Gameboard design and development.</p>
+                <p class="abt-body3" id="abt7." style="margin-bottom: 0;">_Develop creative concepts for digital
+                    marketing
+                    and BTL campaigns.</p>
+            </div>
+
+            <!-- AML1: Línea horizontal naranja, 5pt -->
+            <span class="aml1 motion-fade-move-up" id="aml1" aria-hidden="true"></span>
+
+            <!-- ATT3 + Education -->
+            <div class="motion-fade-move-up">
+                <h2 class="att" id="att3">EDUCATION</h2>
+                <!-- ABT8 (BODY-1 naranja) -->
+                <p class="abt-body1-orange" id="abt8">Bachelor of Design 2018 - 2023</p>
+                <!-- ABT9 (BODY-1 naranja) -->
+                <p class="abt-body3-orange" id="abt9">ITESO Guadalajara, Jal.</p>
+                <!-- ABT10 -->
+                <p class="abt-body3" id="abt10.1">_Develop strategic graphic communication to create functional
+                    solutions
+                    that
+                    improve quality of life.</p>
+                <p class="abt-body3" id="abt10.2">_Materialize creative ideas into sustainable, accessible, and
+                    user-centered
+                    products.</p>
+                <p class="abt-body3" id="abt10.3">_Manage projects that drive business growth through culturally
+                    respectful
+                    and practical solutions.</p>
+                <p class="abt-body3" id="abt10.4">_Resolve design problems by creating durable products with
+                    high-quality
+                    standards.</p>
+                <p class="abt-body3" id="abt10.5">_Optimize production systems to increase resource efficiency and
+                    minimize
+                    environmental impact.</p>
+                <p class="abt-body3" id="abt10.6">_Apply a global design vision to solve specific local needs through
+                    specialized expertise.</p>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

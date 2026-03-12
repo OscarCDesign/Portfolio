@@ -1,0 +1,251 @@
+/* ============================================================
+   UTILITIES — Clases de apoyo
+   ============================================================ */
+
+/* --- COLORES DE TEXTO --- */
+.color-orange {
+    color: var(--color-orange-terracotta-01);
+}
+
+.color-blue {
+    color: var(--color-blue-petroleum-01);
+}
+
+.color-offwhite {
+    color: var(--color-offwhite-alabaster-01);
+}
+
+/* --- TIPOGRAFÍA (REGLA-TYPO-001) --- */
+/* TYPO-DISPLAY-1 */
+.typo-display-1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin: 0;
+    /* Mobile: 69pt / 64pt */
+    font-size: 69pt;
+    line-height: 64pt;
+}
+
+@media (min-width: 768px) {
+
+    /* Tablet: 93pt / 80pt */
+    .typo-display-1 {
+        font-size: 93pt;
+        line-height: 80pt;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    /* Desktop: 160pt / 148pt */
+    .typo-display-1 {
+        font-size: 160pt;
+        line-height: 148pt;
+    }
+}
+
+/* TYPO-DISPLAY-2 */
+.typo-display-2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin: 0;
+    /* Mobile: 33pt / 30pt */
+    font-size: 33pt;
+    line-height: 30pt;
+}
+
+@media (min-width: 768px) {
+
+    /* Tablet: 60pt / 51pt */
+    .typo-display-2 {
+        font-size: 60pt;
+        line-height: 51pt;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    /* Desktop: 81pt / 75pt */
+    .typo-display-2 {
+        font-size: 81pt;
+        line-height: 75pt;
+    }
+}
+
+/* TYPO-HEADLINE-1 */
+.typo-headline-1 {
+    font-family: var(--font-ui);
+    font-optical-sizing: auto;
+    font-weight: 800;
+    margin: 0;
+    /* Mobile: 22pt / 23pt */
+    font-size: 22pt;
+    line-height: 23pt;
+}
+
+@media (min-width: 768px) {
+
+    /* Tablet: 28pt / 30pt */
+    .typo-headline-1 {
+        font-size: 28pt;
+        line-height: 30pt;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    /* Desktop: 36pt / 38pt */
+    .typo-headline-1 {
+        font-size: 36pt;
+        line-height: 38pt;
+    }
+}
+
+/* TYPO-BODY-1 */
+.typo-body-1 {
+    font-family: var(--font-ui);
+    font-optical-sizing: auto;
+    margin: 0;
+    /* Mobile: 18pt / 18pt */
+    font-size: 18pt;
+    line-height: 18pt;
+}
+
+@media (min-width: 768px) {
+
+    /* Tablet: 20pt / 20pt */
+    .typo-body-1 {
+        font-size: 20pt;
+        line-height: 20pt;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    /* Desktop: 24pt / 26pt */
+    .typo-body-1 {
+        font-size: 24pt;
+        line-height: 26pt;
+    }
+}
+
+/* TYPO-BODY-2 */
+.typo-body-2 {
+    font-family: var(--font-ui);
+    font-optical-sizing: auto;
+    margin: 0;
+    /* Mobile: 16pt / 18pt */
+    font-size: 16pt;
+    line-height: 18pt;
+}
+
+@media (min-width: 768px) {
+
+    /* Tablet: 18pt / 22pt */
+    .typo-body-2 {
+        font-size: 18pt;
+        line-height: 22pt;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    /* Desktop: 20pt / 24pt */
+    .typo-body-2 {
+        font-size: 20pt;
+        line-height: 24pt;
+    }
+}
+
+/* --- AYUDAS DE VISIBILIDAD --- */
+.hidden {
+    display: none !important;
+}
+
+/* Ocultar en mobile, visible en tablet/desktop */
+.show-desktop-only {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .show-desktop-only {
+        display: flex;
+    }
+}
+
+/* Visible solo en mobile */
+.show-mobile-only {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .show-mobile-only {
+        display: none;
+    }
+}
+
+/* --- ALINEACIÓN DE TEXTO --- */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* --- CONTENEDOR CENTRADO VERTICAL --- */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- LÍNEA HORIZONTAL (AML1) --- */
+.horizontal-line {
+    display: block;
+    width: 100%;
+    height: var(--comp-border-width);
+    background-color: var(--color-orange-terracotta-01);
+}
+
+/* --- IMAGE FILL (Placeholder) --- */
+.image-fill {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- STICKY FOOTER TOOL --- */
+.main-container {
+    flex-grow: 1;
+}
+
+/* ─── REGLA-LOGICA-001: Flag rendering guard ─────────────────────────────
+   Variante true siempre nace oculta (false-first / fallback seguro).
+   El swap ocurre solo cuando el padre recibe data-logic-state="true".
+   Este bloque es la única declaración autorizada; las copias inline
+   en páginas individuales deben eliminarse para evitar conflictos.     */
+[data-variant="true"] {
+    display: none !important;
+}
+[data-logic-state="true"] [data-variant="true"] {
+    display: inline !important;
+}
+[data-logic-state="true"] [data-variant="false"] {
+    display: none !important;
+}

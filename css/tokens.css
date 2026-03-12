@@ -1,0 +1,34 @@
+/* ============================================================
+   TOKENS — Sistema de Diseño (REGLA-COLOR-001 / REGLA-TYPO-001 / REGLA-MOTION-001)
+   ============================================================ */
+
+:root {
+    /* --- PALETA BASE (REGLA-COLOR-001) --- */
+    --color-orange-terracotta-01: #C65A2E;
+    --color-blue-petroleum-01: #233D4D;
+    --color-offwhite-alabaster-01: #F5F3EF;
+
+    /* --- TIPOGRAFÍAS (REGLA-TYPO-001) --- */
+    --font-display: 'Boska', serif;
+    --font-ui: 'Inter', sans-serif;
+
+    /* --- GRID (REGLA-GRID-001) --- */
+    --grid-row-height: 31.3px;
+    --grid-cols-desktop: 42;
+    --grid-cols-tablet: 25;
+    --grid-cols-mobile: 13;
+
+    /* --- COMPONENTES --- */
+    --comp-border-width: 3pt;
+    --comp-button-marker-width: 5pt;
+    --comp-button-marker-offset: 15px;
+
+    /* --- MOTION (REGLA-MOTION-001) --- */
+    --motion-duration-main: 1200ms;
+    /* DURACIÓN EXTENDIDA PARA SUAVIDAD */
+    --motion-duration-text: 800ms;
+    /* DURACIÓN EXTENDIDA PARA TEXTOS */
+    --motion-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --motion-ease-in-out-smooth: cubic-bezier(0.42, 0, 0.58, 1);
+    --motion-move-distance: 20px;
+}

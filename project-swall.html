@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Golondrinas (Swallows)</title>
+    <meta name="description" content="Proyecto Golondrinas — detalle del trabajo de diseño.">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+</head>
+
+<body class="page-light">
+    <div id="page-transition-overlay" style="background-color: var(--color-offwhite-alabaster-01);"></div>
+
+    <!-- MENU-BLANCO -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn" data-transition>WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (PP-S Matrix) -->
+    <main class="project-main main-container" aria-label="Proyecto Golondrinas">
+        <div class="pp-grid">
+
+            <!-- PSDT1 -->
+            <h1 class="pxdt1 motion-fade-move-up">Golondrinas<br>(Swallows)</h1>
+
+            <!-- PSBT1 (FLAG-ALL-P) -->
+            <p class="pxbt motion-fade-move-up" id="psbt1">
+                <span data-flag="FLAG_ALL_P" data-variant="true">Saved the best for last? I appreciate your thorough
+                    review of my work.<br>...<br>"Golondrinas" (Swallows in spanish) is a humanitarian platform designed
+                    to assist individuals in transit through Mexico by providing the essential tools for a safe, legal,
+                    and dignified journey. Available via web for shelters and support centers, and as a mobile app for
+                    users on the move, the project provides critical information to ensure a controlled and informed
+                    experience. It does not seek to encourage migration, but rather to acknowledge its reality and
+                    prioritize the human dignity of those on the path.</span>
+                <span data-flag="FLAG_ALL_P" data-variant="false">"Golondrinas" (Swallows in spanish) is a humanitarian
+                    platform designed
+                    to assist individuals in transit through Mexico by providing the essential tools for a safe, legal,
+                    and dignified journey. Available via web for shelters and support centers, and as a mobile app for
+                    users on the move, the project provides critical information to ensure a controlled and informed
+                    experience. It does not seek to encourage migration, but rather to acknowledge its reality and
+                    prioritize the human dignity of those on the path.</span>
+            </p>
+
+            <!-- PSBT2 (FLAG-FIRST-P) -->
+            <p class="pxbt motion-fade-move-up" id="psbt2">
+                <span data-flag="FLAG_FIRST_P" data-variant="true">Great choice to start with.<br>...<br><span
+                        class="destacado">Year:</span> 2025<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, Animation, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> Senior Designer and UX Tester</span>
+                <span data-flag="FLAG_FIRST_P" data-variant="false"><span class="destacado">Year:</span> 2025<br><span
+                        class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, Animation, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> Senior Designer and UX Tester</span>
+            </p>
+
+            <!-- PSBT3 -->
+            <p class="pxbt motion-fade-move-up">
+                <span class="caption">(The following video provides an illustrative introduction to the
+                    project)<br><br></span>
+            </p>
+
+            <!-- PSF1: L+2 debajo de PSBT3 -->
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/Swall/SF1.mp4" type="video/mp4">
+                    <img src="assets/Work/WF4_A1.jpg" alt="Fallback">
+                </video>
+            </div>
+
+            <!-- PSBT4: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                Inspired by nature and its connection to the earth, Golondrinas uses the imagery of the migratory bird
+                to represent the universal search for better living conditions. The project employs a playful,
+                lighthearted graphic style designed to connect with the user’s inner child, providing a necessary mental
+                relief from a harsh reality.<br><br>Safety is imperative, as individuals in transit through Mexico
+                face constant threats of violence, theft, and extortion. The platform prioritizes immediate access to
+                verified information regarding secure routes, required documentation, and trusted aid
+                organizations.
+            </p>
+
+            <!-- PSF2: L+3/L+2 debajo de PSBT4 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/Swall/SF2.jpg" alt="PSF2 — Swall" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Swall/SF3.jpg" alt="PSF3 — Swall" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Swall/SF4.jpg" alt="PSF4 — Swall" loading="lazy">
+            </div>
+
+            <!-- PSBT5: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                The design is built around the user's physical environment. The mobile interface
+                features a navigation scheme optimized for one-handed thumb use, allowing for full control while walking
+                or carrying belongings. To assist those with visual impairments or literacy challenges (and to
+                facilitate heads-up navigation), a text-to-speech narrator is integrated. Additionally, the app allows
+                users to link with others to monitor progress and includes an emergency button for instant alerts during
+                high-risk situations.
+            </p>
+
+            <!-- PSF5-PSF9 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/Swall/SF5.jpg" alt="PSF5 — Swall" loading="lazy">
+            </div>
+
+            <!-- PSBT6: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                <span class="caption">Certain screens are partially hidden to respect client confidentiality.
+                    <br>Images may unlock when the content is no longer sensitive.<br><br></span>
+            </p>
+
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/Swall/SF6.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Swall/SF7.jpg" alt="PSF7 — Swall" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Swall/SF8.jpg" alt="PSF8 — Swall" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Swall/SF9.jpg" alt="PSF9 — Swall" loading="lazy">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

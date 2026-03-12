@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Work</title>
+    <meta name="description" content="Portafolio de diseño y desarrollo. Explora los proyectos.">
+
+    <!-- Tipografías (REGLA-TYPO-001) -->
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Lógica (antes del render) -->
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+
+    <style>
+        /* ─── RESET LOCAL ────────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* ─── BODY ─────────────────────────────────────────── */
+        body {
+            background-color: var(--color-blue-petroleum-01);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ══════════════════════════════════════════════════════
+       GRID WRAPPER — usado por ambas secciones
+    ══════════════════════════════════════════════════════ */
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            grid-auto-rows: var(--grid-row-height);
+            width: 100%;
+            flex: 0 0 auto;
+            /* Hero is fixed height essentially */
+        }
+
+        @media (min-width: 768px) {
+            .page-grid {
+                grid-template-columns: repeat(25, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .page-grid {
+                grid-template-columns: repeat(42, 1fr);
+            }
+        }
+
+        /* ══════════════════════════════════════════════════════
+       MENU-HERO
+    ══════════════════════════════════════════════════════ */
+        #hero-wrapper {
+            margin-bottom: 0;
+            /* No gap */
+        }
+
+        #hero-frame {
+            /* Mobile */
+            grid-column: 2 / 13;
+            grid-row: 2 / span var(--hero-rows, 14);
+            /* USAR BOX-SHADOW PARA NO AFECTAR EL MATH DEL GRID */
+            box-shadow: inset 0 0 0 var(--comp-border-width) var(--color-orange-terracotta-01);
+            overflow: hidden;
+            background-color: var(--color-blue-petroleum-01);
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-auto-rows: var(--grid-row-height);
+            align-items: start;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            #hero-frame {
+                grid-column: 2 / 25;
+                grid-row: 2 / span var(--hero-rows, 11);
+                grid-template-columns: repeat(23, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #hero-frame {
+                grid-column: 3 / 41;
+                grid-row: 2 / span var(--hero-rows, 13);
+                grid-template-columns: repeat(38, 1fr);
+            }
+        }
+
+        /* ─── Contenido Hero (MDT1, MBT1, etc) — Igual que antes ── */
+        #mdt1 {
+            grid-column: 2 / -2;
+            grid-row: 2 / span var(--mdt-rows, 5);
+            display: flex;
+            flex-wrap: wrap;
+            /* Enable word wrap */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin: 0;
+            font-size: 58pt;
+            line-height: 58pt;
+            white-space: normal;
+            box-sizing: border-box;
+        }
+
+        #mdt1 .letter {
+            display: inline-block;
+            transform-origin: left center;
+        }
+
+        @media (min-width: 768px) {
+            #mdt1 {
+                grid-row: 2 / span var(--mdt-rows, 3);
+                font-size: 98pt;
+                line-height: 100pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #mdt1 {
+                grid-row: 2 / span var(--mdt-rows, 6);
+                font-size: 130pt;
+                /* Further reduced from 135pt */
+                line-height: 130pt;
+            }
+        }
+
+        #mbt1-1 {
+            grid-column: 2 / -2;
+            /* grid-row controlado por JS */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-weight: 400;
+            font-size: 15pt;
+            line-height: 30pt;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #mbt1-1.is-visible {
+            transition-delay: 500ms;
+            transition-duration: 600ms;
+        }
+
+        @media (min-width: 768px) {
+            #mbt1-1 {
+                font-size: 15pt;
+                line-height: 20pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #mbt1-1 {
+                font-size: 15pt;
+                line-height: 24pt;
+            }
+        }
+
+        #mbt1-2 {
+            grid-column: 2 / -2;
+            /* grid-row controlado por JS */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-offwhite-alabaster-01);
+            font-family: var(--font-ui);
+            font-weight: 300;
+            font-size: 12pt;
+            opacity: 0.7;
+            line-height: normal;
+            margin: 0;
+            margin-top: calc(var(--grid-row-height) * -1);
+
+            box-sizing: border-box;
+        }
+
+        #mbt1-2.is-visible {
+            transition-delay: 500ms;
+            transition-duration: 600ms;
+        }
+
+        @media (min-width: 768px) {
+            #mbt1-2 {
+                font-size: 15pt;
+                line-height: 20pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #mbt1-2 {
+                font-size: 15pt;
+                line-height: 20t;
+            }
+        }
+
+
+        @media (max-width: 767px) {
+            #mbg {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                width: 100%;
+                height: calc(var(--grid-row-height) * 3);
+            }
+        }
+
+        /* Mobile Menu Trigger & Hero Cleanup */
+        #mobile-menu-trigger {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            #mobile-menu-trigger {
+                display: flex;
+                grid-column: span 3;
+                width: 100%;
+                height: calc(var(--grid-row-height) * 3);
+                border: none;
+                border-left: var(--comp-border-width) solid var(--color-orange-terracotta-01);
+                box-sizing: border-box;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            #mobile-menu-trigger .icon-bar {
+                width: calc(100% / 3);
+                /* EXACTAMENTE UNA COLUMNA DE ANCHO */
+                height: 5pt;
+                background-color: var(--color-orange-terracotta-01);
+                position: relative;
+            }
+
+            #mobile-menu-trigger .icon-bar::before,
+            #mobile-menu-trigger .icon-bar::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 5pt;
+                background-color: var(--color-orange-terracotta-01);
+                left: 0;
+            }
+
+            #mobile-menu-trigger .icon-bar::before {
+                top: -12px;
+            }
+
+            #mobile-menu-trigger .icon-bar::after {
+                bottom: -12px;
+            }
+
+            /* Mobile visibility rules */
+            #mb2-hero,
+            #mb3-hero {
+                display: none;
+            }
+
+            #mb1-hero {
+                grid-column: span 4;
+                display: flex;
+                width: 100%;
+            }
+        }
+
+        .mbg-btn {
+            font-size: 15pt;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .mbg-btn {
+                font-size: 18pt;
+            }
+
+            #mb2-hero,
+            #mb3-hero {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .mbg-btn {
+                font-size: 20pt;
+                line-height: normal;
+            }
+        }
+
+        /* ══════════════════════════════════════════════════════════
+       MENU-BARRA (Fixed, opacity 0 initially)
+       Markers handled globally in components.css
+    ══════════════════════════════════════════════════════════ */
+
+        #mdt2 {
+            font-size: 25pt;
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-decoration: none;
+            line-height: normal;
+        }
+
+        @media (min-width: 768px) {
+            #mdt2 {
+                font-size: 45pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #mdt2 {
+                font-size: 55pt;
+            }
+        }
+
+        .barra-btn {
+            /* Forzamos a que el botón nunca mida más que el contenedor padre */
+            max-height: calc(var(--grid-row-height) * 3);
+            display: flex;
+            align-items: center;
+            /* Evita que el fondo del botón tape el borde de la barra */
+            background-clip: padding-box;
+        }
+
+        .barra-btn.active {
+            background-color: var(--color-orange-terracotta-01);
+            color: var(--color-blue-petroleum-01);
+            font-size: 15pt;
+            font-weight: 700;
+        }
+
+        @media (min-width: 768px) {
+            .barra-btn.active {
+                font-size: 16pt;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .barra-btn.active {
+                font-size: 18pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .barra-btn.active {
+                font-size: 20pt;
+            }
+        }
+
+
+        .barra-hamburger {
+            grid-column: 12 / 14;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0;
+        }
+
+        @media (min-width: 768px) {
+            .barra-hamburger {
+                display: none;
+            }
+        }
+
+        /* ══════════════════════════════════════════════════════════
+       WORK GRID
+    ══════════════════════════════════════════════════════════ */
+        .work-section {
+            width: 100%;
+            flex-grow: 1;
+            margin-top: var(--grid-row-height);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #lista-proyectos {
+            width: 100%;
+            /* Espacio vacío considerado inicial de 20 rows, ajustable a contenido */
+            min-height: calc(var(--grid-row-height) * 20);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-columns {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        /* Mobile: Use Flexbox to stack cleanly */
+        @media (max-width: 767px) {
+            .work-columns {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .work-columns {
+                grid-template-columns: repeat(25, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .work-columns {
+                grid-template-columns: repeat(42, 1fr);
+            }
+        }
+
+        /* Columnas DESKTOP/TABLET */
+        .work-col-left,
+        .work-col-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Mobile Override: Reset Grid Columns */
+        @media (max-width: 767px) {
+
+            .work-col-left,
+            .work-col-right {
+                display: contents;
+                /* Allow items to just stack in the flex container */
+            }
+        }
+
+        /* Desktop Placement */
+        @media (min-width: 768px) {
+            .work-col-left {
+                grid-column: 2 / 13;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*2);
+            }
+
+            .work-col-right {
+                grid-column: 14 / 25;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*2);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .work-col-left {
+                grid-column: 3 / 21;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*3);
+            }
+
+            .work-col-right {
+                grid-column: 23 / 41;
+                grid-row: 1;
+                padding-top: calc(var(--grid-row-height)*3);
+            }
+        }
+
+        /* Project Set */
+        .project-set {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: calc(var(--grid-row-height) * 3);
+            /* Mobile margins: ensure we don't overlap. Standard block layout in flex column */
+            padding: 0 calc(100vw / 13);
+            /* Mobile side padding */
+        }
+
+        @media (min-width: 768px) {
+            .project-set {
+                padding: 0;
+            }
+        }
+
+        /* ORDERING for Mobile (1,2,3,4,5,6) */
+        /* WF1(Right) -> 1 */
+        /* WF2(Left)  -> 2 */
+        /* WF3(Right) -> 3 */
+        /* WF4(Right) -> 4 */
+        /* WF5(Left)  -> 5 */
+        /* WF6(Left)  -> 6 */
+
+        /* Generic WF Styling */
+        .wf {
+            background-color: none;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 150ms ease;
+            /* FIX: Explicit Height for Visible Frames */
+            height: calc(var(--grid-row-height) * 6);
+        }
+
+        @media (min-width: 768px) {
+            .wf {
+                height: calc(var(--grid-row-height) * 12);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .wf {
+                height: calc(var(--grid-row-height) * 18);
+            }
+        }
+
+        .wf:hover {
+            opacity: 0.85;
+        }
+
+        .wf img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        /* Frame content A/B logic matches components.css */
+        .frame-content-b {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 100ms;
+        }
+
+        .wf:hover .frame-content-b {
+            opacity: 1;
+        }
+
+        .wf:hover .frame-content-a {
+            opacity: 0;
+        }
+
+        @media (max-width: 767px) {
+            .wf .frame-content-a {
+                opacity: 1;
+            }
+
+            .wf .frame-content-b {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .wf-wf1 {
+                height: calc(var(--grid-row-height) * 4);
+            }
+
+            .wf-wf2 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf3 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf4 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf5 {
+                height: calc(var(--grid-row-height) * 7);
+            }
+
+            .wf-wf6 {
+                height: calc(var(--grid-row-height) * 7);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1279px) {
+            .wf-wf1 {
+                height: calc(var(--grid-row-height) * 4);
+            }
+
+            .wf-wf2 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf3 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf4 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf5 {
+                height: calc(var(--grid-row-height) * 7);
+            }
+
+            .wf-wf6 {
+                height: calc(var(--grid-row-height) * 7);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .wf-wf1 {
+                height: calc(var(--grid-row-height) * 6);
+            }
+
+            .wf-wf2 {
+                height: calc(var(--grid-row-height) * 14);
+            }
+
+            .wf-wf3 {
+                height: calc(var(--grid-row-height) * 14);
+            }
+
+            .wf-wf4 {
+                height: calc(var(--grid-row-height) * 14);
+            }
+
+            .wf-wf5 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+
+            .wf-wf6 {
+                height: calc(var(--grid-row-height) * 10);
+            }
+        }
+
+        /* Project Titles */
+        .wtt {
+            margin-top: calc(var(--grid-row-height));
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-weight: 800;
+            font-size: 22pt;
+        }
+
+        .wbt {
+            margin-top: calc(var(--grid-row-height)*0.5);
+            color: var(--color-offwhite-alabaster-01);
+            opacity: 0.7;
+            font-family: var(--font-ui);
+            font-size: 10pt;
+            line-height: 20pt;
+        }
+
+        @media (min-width: 768px) {
+            .wtt {
+                font-size: 28pt;
+            }
+
+            .wbt {
+                font-size: 12pt;
+                line-height: 28px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .wtt {
+                font-size: 28pt;
+            }
+
+            .wbt {
+                font-size: 12pt;
+                line-height: 28px;
+            }
+        }
+
+
+
+        /* Footer*/
+        @media (max-width: 767px) {
+            .footer-item .typo-body-2 {
+                font-size: 10pt;
+                line-height: 15pt;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-item .typo-body-2 {
+                font-size: 10pt;
+                line-height: 15pt;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: calc(100vw / 13);
+            }
+
+            #fbt2 {
+                text-align: left;
+                justify-content: flex-start;
+                margin-top: 8px;
+            }
+
+            #fbt1 {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-dark">
+
+    <div id="page-transition-overlay"></div>
+
+    <!-- HERO -->
+    <div class="page-grid" id="menu-hero">
+        <div id="hero-frame">
+            <h1 id="mdt1" aria-label="OSCAR CARREÑO"></h1>
+            <p id="mbt1-1" class="motion-fade-basic">or just Oscar C.</p>
+            <p id="mbt1-2" class="motion-fade-basic">
+                <span data-flag="FLAG_RECURRING" data-variant="false">Hi, I´m a product designer based in Guadalajara,
+                    Mexico. I invite you to explore my professional practice in design systems and visual architecture
+                    and the logic behind it.</span>
+                <span data-flag="FLAG_RECURRING" data-variant="true">Hi, welcome back to my design portfolio. I assume
+                    you are looking for specific details this time. Feel free to pick up where you left off.</span>
+            </p>
+            <div id="mbg">
+                <a href="index.html" class="mbg-btn active" id="mb1-hero" data-transition>WORK</a>
+                <a href="about.html" class="mbg-btn" id="mb2-hero" data-transition>ABOUT</a>
+                <a href="contact.html" class="mbg-btn" id="mb3-hero" data-transition>CONTACT</a>
+                <!-- Mobile Trigger -->
+                <div id="mobile-menu-trigger" role="button" aria-label="Abrir Menú">
+                    <div class="icon-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA -->
+    <nav id="menu-barra" class="barra-hidden">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn active" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <!-- MBG BARRA (Mobile Formula: 7 cols [4/3]) -->
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn">WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <!-- Hidden but functional btn for overlay trigger logic if needed -->
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY (Updated Structure - No onclick, relying on components.js) -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <!-- The X is the hamburger frame transformed -->
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- WORK -->
+    <main class="work-section main-container">
+        <section id="lista-proyectos">
+            <div class="work-columns">
+                <!-- Ordenados para mobile via CSS order -->
+
+                <!-- RIGHT COL (Items 1, 3, 4) -->
+                <div class="work-col-right">
+                    <!-- WF1 -> Order 1 -->
+                    <div class="project-set motion-fade-move-up" style="order: 1;">
+                        <a href="project-vibec.html" class="wf wf-wf1" data-transition>
+                            <div class="frame-content-a"><img src="assets/Work/WF1_A.jpg"></div>
+                            <div class="frame-content-b"><img src="assets/Work/WF1_B.jpg"></div>
+                        </a>
+                        <h2 class="wtt">VIBE CODING PROCESS</h2>
+                        <p class="wbt">A personal framework for executing high-fidelity code through a structured
+                            system, clear visual references and logic-based prompting.</p>
+                    </div>
+                    <!-- WF3 -> Order 3 -->
+                    <div class="project-set motion-fade-move-up" style="order: 3;">
+                        <a href="project-miiteso.html" class="wf wf-wf3" data-transition>
+                            <div class="frame-content-a"><img src="assets/Work/WF3_A.jpg"></div>
+                            <div class="frame-content-b"><img src="assets/Work/WF3_B.jpg"></div>
+                        </a>
+                        <h2 class="wtt">MI ITESO - COLLEGE APP</h2>
+                        <p class="wbt">Comprehensive university ecosystem. Streamlining academic schedules, directories,
+                            and institutional services into a single, cohesive digital touchpoint.</p>
+                    </div>
+                    <!-- WF4 -> Order 4 -->
+                    <div class="project-set motion-fade-move-up" style="order: 4;">
+                        <a href="project-okdj.html" class="wf wf-wf4" data-transition>
+                            <div class="frame-content-a">
+                                <video autoplay loop muted playsinline preload="metadata"
+                                    style="width:100%; height:100%; object-fit:cover;">
+                                    <source src="assets/Work/WF4_A.mp4" type="video/mp4">
+                                    <img src="assets/Work/WF4_A1.jpg" alt="Fallback">
+                                </video>
+                            </div>
+                            <div class="frame-content-b"><img src="assets/Work/WF4_B.jpg"></div>
+                        </a>
+                        <h2 class="wtt">OKDJ - BOOKING SITE</h2>
+                        <p class="wbt">Dynamic agenda and booking platform for a local DJ. Merging functional scheduling
+                            with interactive elements for a deep-dive user experience.</p>
+                    </div>
+                </div>
+
+                <!-- LEFT COL (Items 2, 5, 6) -->
+                <div class="work-col-left">
+                    <!-- WF2 -> Order 2 -->
+                    <div class="project-set motion-fade-move-up" style="order: 2;">
+                        <a href="project-swall.html" class="wf wf-wf2" data-transition>
+                            <div class="frame-content-a">
+                                <video autoplay loop muted playsinline preload="metadata"
+                                    style="width:100%; height:100%; object-fit:cover;">
+                                    <source src="assets/Work/WF2_A.mp4" type="video/mp4">
+                                    <img src="assets/Work/WF2_B.jpg" alt="Fallback">
+                                </video>
+                            </div>
+                            <div class="frame-content-b"><img src="assets/Work/WF2_B.jpg"></div>
+                        </a>
+                        <h2 class="wtt">GOLONDRINAS (SWALLOWS)</h2>
+                        <p class="wbt">End-to-end assistance platform for individuals in transit. A sensitive,
+                            utility-first approach to navigation and safety within the Mexican territory.</p>
+                    </div>
+                    <!-- WF5 -> Order 5 -->
+                    <div class="project-set motion-fade-move-up" style="order: 5;">
+                        <a href="project-nutm.html" class="wf wf-wf5" data-transition>
+                            <div class="frame-content-a"><img src="assets/Work/WF5_A.jpg"></div>
+                            <div class="frame-content-b"><img src="assets/Work/WF5_B.jpg"></div>
+                        </a>
+                        <h2 class="wtt">NUTRICA - MOBILE APP</h2>
+                        <p class="wbt">Patient-centric nutrition clinic interface. Personalized treatment tracking,
+                            appointment management, and real-time clinical updates for active users.</p>
+                    </div>
+                    <!-- WF6 -> Order 6 -->
+                    <div class="project-set motion-fade-move-up" style="order: 6;">
+                        <a href="project-nutd.html" class="wf wf-wf6" data-transition>
+                            <div class="frame-content-a"><img src="assets/Work/WF6_A.jpg"></div>
+                            <div class="frame-content-b"><img src="assets/Work/WF6_B.jpg"></div>
+                        </a>
+                        <h2 class="wtt">NUTRICIA - DESKTOP APP</h2>
+                        <p class="wbt">Internal management infrastructure for a clinical lab. Optimizing administrative
+                            workflows and data synchronization for specialized healthcare staff.</p>
+                    </div>
+                </div>
+
+            </div> <!-- /work-columns -->
+        </section> <!-- /lista-proyectos -->
+    </main>
+
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that.
+                ®Oscar C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

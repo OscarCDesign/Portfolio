@@ -1,0 +1,127 @@
+/* ============================================================
+   MOTION — REGLA-MOTION-001
+   Solo los códigos permitidos. will-change obligatorio para 60fps.
+   ============================================================ */
+
+/* --- TOKENS (también en :root de tokens.css) --- */
+:root {
+    --motion-duration-main: 1200ms;
+    --motion-duration-text: 800ms;
+    --motion-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --motion-ease-in-out-smooth: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* ============================================================
+   MOTION-FADE-BASIC
+   Fade in/out simple. Disparado via clase .is-visible
+   ============================================================ */
+.motion-fade-basic {
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity var(--motion-duration-main) var(--motion-ease-in-out-smooth);
+}
+
+.motion-fade-basic.is-visible {
+    opacity: 1;
+}
+
+/* ============================================================
+   MOTION-FADE-MOVE
+   Fade + desplazamiento vertical 20px
+   ============================================================ */
+.motion-fade-move-up {
+    opacity: 0;
+    transform: translateY(28px);
+    will-change: transform, opacity;
+    transition:
+        opacity 900ms var(--motion-ease-out-expo),
+        transform 900ms var(--motion-ease-out-expo);
+    transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-fade-move-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.motion-fade-move-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    will-change: transform, opacity;
+    transition:
+        opacity var(--motion-duration-main) var(--motion-ease-out-expo),
+        transform var(--motion-duration-main) var(--motion-ease-out-expo);
+}
+
+.motion-fade-move-down.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   MOTION-TEXT-STRETCH
+   Aplicado letter-by-letter via JS.
+   El JS divide el texto en <span> con data-char-index.
+   ============================================================ */
+.motion-text-stretch .char {
+    display: inline-block;
+    opacity: 0;
+    transform: scaleX(0.1);
+    transform-origin: left center;
+    will-change: transform, opacity;
+    transition:
+        opacity var(--motion-duration-text) var(--motion-ease-out-expo),
+        transform var(--motion-duration-text) var(--motion-ease-out-expo);
+}
+
+.motion-text-stretch.is-visible .char {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* ============================================================
+   MOTION-SLIDE-PATH-IN
+   Desplazamiento horizontal desde columna origen.
+   El offset se controla via variable CSS inline --slide-offset.
+   ============================================================ */
+.motion-slide-path-in {
+    opacity: 0;
+    transform: translateX(var(--slide-offset, 400px));
+    will-change: transform, opacity;
+    transition:
+        opacity var(--motion-duration-main) var(--motion-ease-out-expo),
+        transform var(--motion-duration-main) var(--motion-ease-out-expo);
+}
+
+.motion-slide-path-in.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================================
+   TRANSICIÓN DE PÁGINA (fade background)
+   Aplicado al body o al contenedor principal.
+   MOTION-FADE-BACKGROUND entre páginas oscura/clara.
+   ============================================================ */
+body {
+    transition: background-color var(--motion-duration-main) var(--motion-ease-in-out-smooth);
+}
+
+/* ============================================================
+   PAGE TRANSITION OVERLAY
+   Overlay que cubre pantalla entre navegaciones.
+   ============================================================ */
+#page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-blue-petroleum-01);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 350ms ease;
+}
+
+#page-transition-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}

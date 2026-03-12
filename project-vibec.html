@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Vibe Coding Process</title>
+    <meta name="description" content="Proyecto Vibe Coding Process — detalle del trabajo de diseño.">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+</head>
+
+<body class="page-light">
+    <div id="page-transition-overlay" style="background-color: var(--color-offwhite-alabaster-01);"></div>
+
+    <!-- MENU-BLANCO -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn" data-transition>WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (PP-V Matrix) -->
+    <main class="project-main main-container" aria-label="Proyecto Vibe Coding Process">
+        <div class="pp-grid">
+
+            <!-- PVDT1 -->
+            <h1 class="pxdt1 motion-fade-move-up">Vibe Coding<br>Process</h1>
+
+            <!-- PVBT1 (FLAG-ALL-P) -->
+            <p class="pxbt motion-fade-move-up" id="pvbt1">
+                <span data-flag="FLAG_ALL_P" data-variant="true">Saved the best for last? I appreciate your thorough
+                    review of my work.<br>...<br>I engineered a strategic design system that integrates
+                    AI-driven language environments to significantly accelerate the digital product development
+                    lifecycle. When executed correctly, this methodology effectively bridges the gap between design and
+                    engineering, fostering a high-velocity workspace that streamlines the transition from concept to
+                    production. As a definitive proof of concept, this entire portfolio was built using this integrated
+                    framework, demonstrating its capacity to optimize efficiency without compromising design
+                    integrity.</span>
+                <span data-flag="FLAG_ALL_P" data-variant="false">I engineered a strategic design system that integrates
+                    AI-driven language environments to significantly accelerate the digital product development
+                    lifecycle. When executed correctly, this methodology effectively bridges the gap between design and
+                    engineering, fostering a high-velocity workspace that streamlines the transition from concept to
+                    production. As a definitive proof of concept, this entire portfolio was built using this integrated
+                    framework, demonstrating its capacity to optimize efficiency without compromising design
+                    integrity.</span>
+            </p>
+
+            <!-- PVBT2 (FLAG-FIRST-P) -->
+            <p class="pxbt motion-fade-move-up" id="pvbt2">
+                <span data-flag="FLAG_FIRST_P" data-variant="true">Great choice to start with.<br>...<br><span
+                        class="destacado">Year:</span> 2025 - Present<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Vibe Coding, Antigravity, Claude, Storytelling<br><span class="destacado">Role:</span> Vibe
+                    Coder</span>
+                <span data-flag="FLAG_FIRST_P" data-variant="false"><span class="destacado">Year:</span> 2025 -
+                    Present<br><span class="destacado">Skills:</span> UX/UI Design, Vibe Coding, Antigravity, Claude,
+                    Storytelling<br><span class="destacado">Role:</span> Vibe Coder</span>
+            </p>
+
+            <!-- PVBT3 -->
+            <p class="pxbt motion-fade-move-up">
+                <span class="caption">(This serves as a technical exposition of the methodology and does not
+                    represent a commercial or
+                    live project application)</span>
+            </p>
+
+            <!-- PVF1: L+2 debajo de PVBT3 -->
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <img src="assets/Vibec/PF1.jpg" alt="PVF1 — Vibe Coding" loading="lazy">
+            </div>
+
+            <!-- PVBT4: L+3/L+2 debajo de PVF1 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                My workflow leverages Google’s Antigravity as the primary environment, utilizing its native agent for
+                high-scale architectural tasks, while employing Gemini and Claude as an auxiliary guide for technical
+                prompting and manual refinements. <br><br>I’ve found that AI performance peaks when grounded in visual
+                context; therefore, my process begins with a comprehensive flat design phase to architect the product’s
+                visual hierarchy and components. This is followed by the creation of a robust rule repository within
+                Antigravity, where I define everything from design tokens and complex motion behaviors to logic-driven
+                identifiers, ensuring seamless traceability and precision throughout the development.
+            </p>
+
+            <!-- PVF2: L+3/L+2 debajo de PVBT4 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/Vibec/PF2.jpg" alt="PVF2 — Vibe Coding" loading="lazy">
+            </div>
+
+            <!-- PVF3: Apilado L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Vibec/PF3.jpg" alt="PVF3 — Vibe Coding" loading="lazy">
+            </div>
+
+            <!-- PVF4: Apilado L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/Vibec/PF4.jpg" alt="PVF4 — Vibe Coding" loading="lazy">
+            </div>
+
+            <!-- PVBT5: L+3/L+2 debajo de PVF4 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                With the rules established and visual references set, the process moves into the construction phase.
+                Here, I "invoke" the design tokens defined in the rules to build upon the grid (synthesizing color,
+                components, typography, motion, etc.) to dictate the behavior and aesthetics of every pixel on the
+                screen.
+                <br><br>To optimize the AI’s contextual understanding, I feed the previously designed interface frames
+                directly
+                into the prompt. The final stage involves fine-tuning details through direct collaboration with the AI,
+                followed by the integration of final assets and copy. Before deployment, I conduct a user simulation
+                using Antigravity’s native agent to validate the flow. <br><br>This methodology currently saves
+                approximately
+                30% in time and resources compared to traditional workflows. A margin that is expected to grow
+                exponentially as AI capabilities and prompting expertise continue to evolve.
+            </p>
+
+            <!-- PVF5: L+3/L+2 debajo de PVBT5 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/image_fill.png" alt="PVF5 — Vibe Coding" loading="lazy">
+            </div>
+
+            <!-- PVF6-PVF9: Apilados L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/image_fill.png" alt="PVF6 — Vibe Coding" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/image_fill.png" alt="PVF7 — Vibe Coding" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/image_fill.png" alt="PVF8 — Vibe Coding" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/image_fill.png" alt="PVF9 — Vibe Coding" loading="lazy">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that.
+                ®Oscar C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

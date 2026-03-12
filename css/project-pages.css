@@ -1,0 +1,368 @@
+/* ============================================================
+   PROJECT PAGES — PP-X MATRIX
+   REGLA-GRID-001 + REGLA-COMPONENTES-001 + REGLA-TYPO-001
+   ============================================================
+   Applies to all project-*.html pages (page-light class on body).
+
+   KEY PRINCIPLE: The PP-X layout is a VERTICAL STACK.
+   - Horizontal positioning: CSS Grid column spans
+   - Vertical spacing: margin-top in L-units (31.3px)
+   - Row sizing: auto (content-sized, NOT fixed 31.3px rows)
+   ============================================================ */
+
+/* ─── BODY: Flex column so footer pushes to bottom ───────── */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-offwhite-alabaster-01);
+    color: var(--color-blue-petroleum-01);
+}
+
+/* ─── PROJECT MAIN: The content container ─────────────────── */
+/*
+   • flex:1  → grows to fill the space between nav and footer
+   • padding-top: 3L → offset for the 3-line fixed nav bar
+   • display:flex + flex-direction:column → stacks pp-grid
+     naturally so footer never overlaps content
+*/
+.project-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: calc(var(--grid-row-height) * 3);
+    box-sizing: border-box;
+}
+
+/* ─── PP GRID: Column grid for horizontal positioning ──────── */
+/*
+   grid-auto-rows: auto → rows size to CONTENT HEIGHT.
+   This is critical. Fixed row heights (31.3px) caused
+   all tall content to overflow/overlap. With auto rows,
+   each row contains exactly one element at its natural height,
+   and margins create the L-based gaps between them.
+*/
+.pp-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-auto-rows: auto;
+    width: 100%;
+    flex: 1;
+    align-content: start;
+    row-gap: 0;
+    /* We control ALL vertical spacing via margin-top */
+}
+
+@media (min-width: 768px) {
+    .pp-grid {
+        grid-template-columns: repeat(25, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .pp-grid {
+        grid-template-columns: repeat(42, 1fr);
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PXDT1 — Project Title (TYPO-DISPLAY-2)
+   Doc: L6 desk/tab (margin = 5L after 1L menu offset),
+        L5 mob (margin = 4L after 1L menu offset).
+   Columns: C11-C32 desk / C5-C21 tab / C2-C12 mob
+   ══════════════════════════════════════════════════════════ */
+.pxdt1 {
+    /* Mobile default */
+    grid-column: 2 / 13;
+    margin-top: calc(var(--grid-row-height) * 4);
+    /* L5: 3L nav offset + 4L = ~L5 from page top */
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 33pt;
+    line-height: 30pt;
+    text-align: center;
+    color: var(--color-blue-petroleum-01);
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .pxdt1 {
+        grid-column: 5 / 22;
+        margin-top: calc(var(--grid-row-height) * 5);
+        /* L6 */
+        font-size: 60pt;
+        line-height: 51pt;
+    }
+}
+
+@media (min-width: 1280px) {
+    .pxdt1 {
+        grid-column: 11 / 33;
+        margin-top: calc(var(--grid-row-height) * 5);
+        /* L6 */
+        font-size: 81pt;
+        line-height: 75pt;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PXBT — Body Text Blocks (TYPO-BODY-2)
+   Relation from doc: L+2 below predecessor.
+   Same horizontal span as PXDT1. Left-aligned.
+   ══════════════════════════════════════════════════════════ */
+.pxbt {
+    /* Mobile */
+    grid-column: 2 / 13;
+    margin-top: calc(var(--grid-row-height) * 2);
+    margin-bottom: 0;
+    font-family: var(--font-ui);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 10pt;
+    line-height: 20pt;
+    color: var(--color-blue-petroleum-01);
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .pxbt {
+        grid-column: 5 / 22;
+        font-size: 12pt;
+        line-height: 22pt;
+    }
+}
+
+@media (min-width: 1280px) {
+    .pxbt {
+        grid-column: 11 / 33;
+        font-size: 12pt;
+        line-height: 22pt;
+    }
+}
+
+/* La variante True siempre nace oculta */
+[data-variant="true"] {
+    display: none !important;
+}
+
+/* Solo si el contenedor padre recibe la señal de éxito, se hace el swap */
+[data-logic-state="true"] [data-variant="true"] {
+    display: inline !important;
+}
+
+[data-logic-state="true"] [data-variant="false"] {
+    display: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PXBT AFTER FRAME — Text after frame group
+   Relation: L+3 desk/tab | L+2 mob below frame
+   ══════════════════════════════════════════════════════════ */
+.pxbt-after-frame {
+    margin-top: calc(var(--grid-row-height) * 2);
+    /* Mobile: L+2 */
+}
+
+@media (min-width: 768px) {
+    .pxbt-after-frame {
+        margin-top: calc(var(--grid-row-height) * 3);
+        /* Desk/Tab: L+3 */
+    }
+}
+
+
+.destacado {
+    color: var(--color-blue-petroleum-01);
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+@media (min-width: 767px) {
+    .destacado {
+        font-size: 12pt;
+    }
+}
+
+.caption {
+    color: var(--color-blue-petroleum-01);
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 10pt;
+    line-height: 12pt;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PP FRAME — Media Frame (COMP-FRAME)
+   Doc sizes:
+     Desktop:  31C wide × 18L tall → C6-C37, h=562px
+     Tablet:   26C wide × 12L tall → C1-C26, h=375px (full width)
+     Mobile:   11C wide × 6L tall  → C2-C13, h=188px
+
+   Relations:
+     PXF1: L+2 below PXBT3
+     PXF2: L+3 desk/tab | L+2 mob below PXBT4
+     PXF3, PXF4: L+1 each (stacked)
+     PXF5: L+3 desk/tab | L+2 mob below PXBT5
+     PXF6-PXF9: L+1 each (stacked)
+   ══════════════════════════════════════════════════════════ */
+.pp-frame {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-blue-petroleum-01);
+
+    /* Mobile: C2-C13 (11 cols), 6L tall */
+    grid-column: 1 / 14;
+    height: calc(var(--grid-row-height) * 9);
+}
+
+.pp-frame>img,
+.pp-frame>video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .pp-frame {
+        grid-column: 1 / 26;
+        height: calc(var(--grid-row-height) * 18);
+    }
+}
+
+@media (min-width: 1280px) {
+    .pp-frame {
+        grid-column: 1 / 43;
+        height: calc(var(--grid-row-height) * 30);
+    }
+}
+
+.video-fill {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    /* Centrado perfecto */
+    object-fit: cover;
+    pointer-events: none;
+    /* Para que el usuario no pueda pausarlo por accidente y parezca diseño puro */
+}
+
+/* Ajuste manual de escala para evitar bordes negros si el frame es muy vertical u horizontal */
+.pp-frame-first-always-2 .video-fill {
+    width: 115%;
+    height: 115%;
+}
+
+/* Frame gap classes — set margin-top for each relation */
+
+/* First frame in group: L+2 below text (PXF1, PXF2, PXF5) */
+.pp-frame-first {
+    margin-top: calc(var(--grid-row-height) * 2);
+    /* Mobile: L+2 */
+}
+
+@media (min-width: 768px) {
+    .pp-frame-first {
+        margin-top: calc(var(--grid-row-height) * 3);
+        /* Desk/Tab: L+3 */
+    }
+}
+
+/* PXF1 is always L+2 (below PXBT3) regardless of breakpoint */
+.pp-frame-first-always-2 {
+    margin-top: calc(var(--grid-row-height) * 0);
+}
+
+/* Stacked frame: L+1 (PXF3, PXF4, PXF6-PXF9) */
+.pp-frame-stacked {
+    margin-top: calc(var(--grid-row-height) * 0);
+}
+
+/* ══════════════════════════════════════════════════════════
+   MENU-BLANCO OVERRIDES
+   Loaded after components.css → beats its rules.
+   ══════════════════════════════════════════════════════════ */
+
+/* MF1 border becomes off-white (seamless on light bg) */
+.page-light #menu-barra {
+    background-color: var(--color-offwhite-alabaster-01);
+    border-bottom-color: var(--color-offwhite-alabaster-01);
+}
+
+/* Dividers between barra-btns → off-white (ghost) */
+.page-light .barra-btn {
+    background-color: var(--color-offwhite-alabaster-01);
+    border-left-color: var(--color-offwhite-alabaster-01) !important;
+}
+
+/* No variante alterna (no solid fill for active btn) */
+.page-light .barra-btn.active {
+    background-color: var(--color-offwhite-alabaster-01);
+    color: var(--color-blue-petroleum-01) !important;
+    font-weight: 700;
+}
+
+.page-light .mobile-menu-overlay {
+    background-color: var(--color-offwhite-alabaster-01);
+}
+
+/* Mobile MENU-BLANCO: hide label, only icon */
+@media (max-width: 767px) {
+    .page-light #mbg-barra .mbg-btn {
+        display: none !important;
+    }
+
+    /* Hamburger fills the full mbg-barra area */
+    .page-light #mbg-barra .hamburger-trigger {
+        grid-column: 1 / -1;
+    }
+
+    /* Icon stripes → blue on light bg */
+    .page-light #mbg-barra .hamburger-icon span {
+        background-color: var(--color-blue-petroleum-01);
+    }
+}
+
+/* Footer*/
+@media (max-width: 767px) {
+    .footer-item .typo-body-2 {
+        font-size: 9pt;
+        line-height: 12pt;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-item .typo-body-2 {
+        font-size: 11pt;
+        line-height: 15pt;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: calc(100vw / 13);
+    }
+
+    #fbt2 {
+        text-align: left;
+        justify-content: flex-start;
+        margin-top: 8px;
+    }
+
+    #fbt1 {
+        text-align: left;
+    }
+}

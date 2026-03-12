@@ -1,0 +1,830 @@
+/* ============================================================
+   COMPONENTS — REGLA-COMPONENTES-001
+   ============================================================ */
+
+/* ─── COMP-FRAME ─────────────────────────────────────────── */
+.comp-frame {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comp-frame>img,
+.comp-frame>video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ─── COMP-FRAME-BORDER ──────────────────────────────────── */
+.comp-frame-border {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--comp-border-width) solid var(--frame-border-color, var(--color-orange-terracotta-01));
+    box-sizing: border-box;
+    /* Borde sobre el margen */
+}
+
+.comp-frame-border>img,
+.comp-frame-border>video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ─── COMP-FRAME-PORTADA ─────────────────────────────────── */
+.comp-frame-portada {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.comp-frame-portada .frame-portada-a,
+.comp-frame-portada .frame-portada-b {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 80ms linear;
+}
+
+.comp-frame-portada .frame-portada-b {
+    opacity: 0;
+}
+
+@media (hover: hover) {
+    .comp-frame-portada:hover .frame-portada-a {
+        opacity: 0;
+    }
+
+    .comp-frame-portada:hover .frame-portada-b {
+        opacity: 1;
+    }
+}
+
+@media (hover: none) {
+    .comp-frame-portada .frame-portada-a {
+        opacity: 0;
+    }
+
+    .comp-frame-portada .frame-portada-b {
+        opacity: 1;
+    }
+}
+
+/* ─── COMP-TEXT-BOX ──────────────────────────────────────── */
+.comp-text-box {
+    display: flex;
+    align-items: center;
+}
+
+/* ─── COMP-BUTTON ────────────────────────────────────────── */
+.comp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: var(--comp-border-width) solid var(--btn-border-color, var(--color-orange-terracotta-01));
+    box-sizing: border-box;
+    /* Borde sobre el margen */
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    /* REMOVED PADDING PER USER REQUEST */
+    font-family: var(--font-ui);
+    font-optical-sizing: auto;
+    font-size: 18pt;
+    line-height: normal;
+}
+
+@media (min-width: 768px) {
+    .comp-button {
+        font-size: 20pt;
+        line-height: 20pt;
+    }
+}
+
+@media (min-width: 1280px) {
+    .comp-button {
+        font-size: 24pt;
+        line-height: 26pt;
+    }
+}
+
+/* Marcador Default: Off-White (Hero) */
+.comp-button::after {
+    content: '';
+    position: absolute;
+    bottom: -10pt;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    height: 5pt;
+    width: 60%;
+    background-color: var(--color-offwhite-alabaster-01);
+    transform-origin: center;
+    transition: transform 200ms var(--motion-ease-out-expo);
+}
+
+.comp-button:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.comp-button.btn-solid {
+    background-color: var(--btn-border-color, var(--color-orange-terracotta-01));
+    color: var(--btn-text-color-solid, var(--color-blue-petroleum-01));
+    font-weight: 700;
+}
+
+.comp-button.btn-solid::after {
+    display: none;
+}
+
+/* ─── PAGE TYPES ─────────────────────────────────────────── */
+.page-dark {
+    background-color: var(--color-blue-petroleum-01);
+    color: var(--color-offwhite-alabaster-01);
+}
+
+.page-light {
+    background-color: var(--color-offwhite-alabaster-01);
+    color: var(--color-blue-petroleum-01);
+}
+
+/* ══════════════════════════════════════════════════════════
+   HAMBURGER
+   ══════════════════════════════════════════════════════════ */
+/* hamburger-frame is now obsolete, moving towards unified hamburger-trigger */
+
+/* Unificar con la estructura de hamburger-trigger de la barra */
+.hamburger-trigger {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    /* BORDE ELIMINADO — Solicitado por el usuario */
+    border: none;
+    background-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+/* Page Light Override */
+.page-light .hamburger-trigger {
+    border-color: var(--color-blue-petroleum-01);
+}
+
+/* State Open Unification — Orange Background as per user spec */
+.hamburger-trigger.is-open {
+    background-color: var(--color-orange-terracotta-01) !important;
+    /* Force orange in open state */
+    border: none;
+}
+
+/* Ensure the icon turns Blue when the trigger is Open (Orange) */
+.hamburger-trigger.is-open .hamburger-icon span {
+    background-color: var(--color-blue-petroleum-01) !important;
+    /* Force blue icon in orange state */
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   MBG — Botones Group (Hero Context)
+   ══════════════════════════════════════════════════════════ */
+#mbg {
+    /* Desktop: Centrar 18 columnas en 38 (38-18=20 / 2 = 10 cols cada lado) */
+    grid-column: 11 / 29;
+    /* grid-row controlado por JS */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 var(--comp-border-width) var(--color-orange-terracotta-01);
+    background-color: transparent;
+}
+
+@media (max-width: 1279px) {
+    #mbg {
+        /* Tablet: Centrar 15 columnas en 23 (23-15=8 / 2 = 4 cols cada lado) */
+        grid-column: 5 / 20;
+    }
+}
+
+@media (max-width: 767px) {
+    #mbg {
+        /* Mobile: Centrar 7 columnas en 11 (11-7=4 / 2 = 2 cols cada lado) */
+        grid-column: 3 / 10;
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   MBG-BARRA (Unificación Fórmula Hero en Barra Sticky)
+   ══════════════════════════════════════════════════════════ */
+#mbg-barra {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    #mbg-barra {
+        display: grid;
+        /* 7 columnas PEGADAS A LA DERECHA (7 a 13 + 1 para borde/calce = 7 a 14) */
+        grid-column: 7 / 14;
+        grid-template-columns: repeat(7, 1fr);
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    #mbg-barra .mbg-btn {
+        grid-column: span 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        border: none;
+        background-color: var(--color-orange-terracotta-01);
+        color: var(--color-blue-petroleum-01);
+        font-size: 15pt;
+        font-family: var(--font-ui);
+        font-weight: 700;
+        text-decoration: none;
+        border-right: none;
+    }
+
+    .page-light #mbg-barra .mbg-btn {
+        background-color: var(--color-blue-petroleum-01);
+        color: var(--color-offwhite-alabaster-01);
+    }
+
+    #mbg-barra .hamburger-trigger {
+        grid-column: span 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        border-left: none;
+        /* Already has border from base class, but we remove the internal divider if it overlaps */
+    }
+
+    .page-light #mbg-barra .hamburger-trigger {
+        border-color: var(--color-blue-petroleum-01);
+    }
+
+    /* Icono dentro del trigger de barra */
+    .page-light #mbg-barra .hamburger-trigger .hamburger-icon span {
+        background-color: var(--color-blue-petroleum-01);
+    }
+}
+
+/* Hamburger Icon Structure */
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 3pt;
+    /* Reducido de 5pt */
+    background-color: var(--color-orange-terracotta-01);
+    transition: transform 250ms var(--motion-ease-out-expo), opacity 200ms;
+}
+
+
+.mbg-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-left: var(--comp-border-width) solid var(--color-orange-terracotta-01);
+    color: var(--color-orange-terracotta-01);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 18pt;
+    line-height: normal;
+    text-decoration: none;
+    position: relative;
+    background-color: transparent;
+    transition: background-color 200ms ease, color 200ms ease;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(var(--grid-row-height) * 3);
+    text-align: center;
+}
+
+@media (min-width: 1280px) {
+    .mbg-btn {
+        font-size: 20pt;
+    }
+}
+
+.mbg-btn:first-child {
+    border-left: none;
+}
+
+.mbg-btn.active {
+    background-color: var(--color-orange-terracotta-01);
+    color: var(--color-blue-petroleum-01);
+    font-weight: 700;
+}
+
+.mbg-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 12pt;
+    left: 50%;
+    height: 5pt;
+    width: 60%;
+    background-color: var(--color-offwhite-alabaster-01);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 200ms var(--motion-ease-out-expo);
+}
+
+.mbg-btn:not(.active):hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Hamburger Icon Styles (Duplicado removido) */
+.hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 3pt;
+    background-color: var(--color-orange-terracotta-01);
+    transition: transform 250ms var(--motion-ease-out-expo), opacity 200ms, background-color 200ms;
+}
+
+
+/* Estado abierto → X */
+.hamburger-frame.is-open .hamburger-icon span:nth-child(1),
+.hamburger-trigger.is-open .hamburger-icon span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    /* Ajustado para 3pt de grosor */
+}
+
+.hamburger-frame.is-open .hamburger-icon span:nth-child(2),
+.hamburger-trigger.is-open .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-frame.is-open .hamburger-icon span:nth-child(3),
+.hamburger-trigger.is-open .hamburger-icon span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    /* Ajustado para 3pt de grosor */
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   MENU-BARRA (ESTRUCTURA UNIFICADA sitewide)
+   ══════════════════════════════════════════════════════════ */
+#menu-barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    height: calc(var(--grid-row-height) * 3);
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    align-items: stretch;
+    opacity: 1;
+    pointer-events: all;
+    box-sizing: border-box;
+    transition: background-color var(--motion-duration-main) var(--motion-ease-in-out-smooth);
+}
+
+/* Specific state for homepage (Hero to Bar transition) */
+#menu-barra.barra-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms ease, background-color var(--motion-duration-main) var(--motion-ease-in-out-smooth);
+}
+
+#menu-barra.barra-visible {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 400ms ease, background-color var(--motion-duration-main) var(--motion-ease-in-out-smooth);
+}
+
+@media (min-width: 768px) {
+    #menu-barra {
+        grid-template-columns: repeat(25, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    #menu-barra {
+        grid-template-columns: repeat(42, 1fr);
+    }
+}
+
+#menu-barra.barra-visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Soporte de Temas (Naranja en Oscuro, Azul en Claro) */
+.page-dark #menu-barra {
+    background-color: var(--color-blue-petroleum-01);
+    border-bottom: var(--comp-border-width) solid var(--color-orange-terracotta-01);
+}
+
+.page-light #menu-barra {
+    background-color: none;
+    border-bottom: none;
+}
+
+/* MDT2 - Logo */
+#mdt2 {
+    grid-column: 1 / 7;
+    /* Aumentado a 6 col para dar espacio */
+    display: flex;
+    align-items: center;
+    padding-left: calc(100vw / 13);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30pt;
+    line-height: 30pt;
+    text-decoration: none;
+}
+
+.page-dark #mdt2 {
+    color: var(--color-orange-terracotta-01);
+}
+
+.page-light #mdt2 {
+    color: var(--color-blue-petroleum-01);
+}
+
+@media (min-width: 768px) {
+    #mdt2 {
+        grid-column: 1 / 11;
+        /* 10 columnas libres */
+        padding-left: calc(100vw / 25);
+        font-size: 45pt;
+        line-height: 51pt;
+    }
+}
+
+@media (min-width: 1280px) {
+    #mdt2 {
+        grid-column: 1 / 25;
+        /* 24 columnas libres */
+        padding-left: calc(100vw / 42 * 2);
+        font-size: 55pt;
+        line-height: 51pt;
+    }
+}
+
+/* Barra Nav - Botones */
+.barra-nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .barra-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Cada botón toma 5 col (15/3=5) */
+        grid-column: 11 / 26;
+        /* 15 columnas totales */
+        height: 100%;
+        align-items: stretch;
+    }
+}
+
+@media (min-width: 1280px) {
+    .barra-nav {
+        grid-column: 25 / 43;
+        /* 18 columnas totales (6 col por botón) */
+    }
+}
+
+.barra-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Removido padding para control total del grid */
+    font-family: var(--font-ui);
+    font-size: 16pt;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    border-left: var(--comp-border-width) solid transparent;
+}
+
+.page-dark .barra-btn {
+    color: var(--color-orange-terracotta-01);
+    border-color: var(--color-orange-terracotta-01) !important;
+}
+
+.page-light .barra-btn {
+    color: var(--color-blue-petroleum-01);
+    border-color: var(--color-blue-petroleum-01) !important;
+}
+
+/* Inactive Hero Buttons: weight regular */
+.mbg-btn:not(.active) {
+    font-weight: 400;
+}
+
+@media (min-width: 1280px) {
+    .barra-btn {
+        font-size: 20pt;
+    }
+}
+
+.barra-btn.active {
+    font-weight: 700;
+}
+
+.page-dark .barra-btn.active {
+    background-color: var(--color-orange-terracotta-01);
+    color: var(--color-blue-petroleum-01);
+}
+
+.page-light .barra-btn.active {
+    background-color: var(--color-blue-petroleum-01);
+    color: var(--color-offwhite-alabaster-01);
+}
+
+/* Marcadores en Barra — 10pt por debajo del cuadro */
+.barra-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 12pt;
+    left: 50%;
+    height: 5pt;
+    width: 60%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 200ms var(--motion-ease-out-expo);
+}
+
+.page-dark .barra-btn::after {
+    background-color: var(--color-offwhite-alabaster-01);
+}
+
+.page-light .barra-btn::after {
+    background-color: var(--color-blue-petroleum-01);
+}
+
+.barra-btn:not(.active):hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+@media (min-width: 768px) {
+    .barra-btn {
+        --marker-width: 53px !important;
+    }
+}
+
+/* Botón Activo en Móvil (sticky barra) - REEMPLAZADO POR MBG-BARRA */
+.barra-btn-mobile {
+    display: none;
+}
+
+/* Hamburger Barra - REEMPLAZADO POR MBG-BARRA */
+.barra-hamburger {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .barra-hamburger {
+        display: none;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE MENU OVERLAY
+   ══════════════════════════════════════════════════════════ */
+#mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 600;
+    background-color: var(--color-orange-terracotta-01);
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: auto;
+    /* Scrollable if content overflows */
+}
+
+#mobile-menu-overlay.is-open {
+    display: flex;
+}
+
+/* Franja superior unificada (MDT2 + Hamburger/X) */
+#mobile-menu-overlay .overlay-header {
+    height: calc(var(--grid-row-height) * 3);
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    align-items: stretch;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 610;
+}
+
+.page-dark #mobile-menu-overlay .overlay-header {
+    background-color: var(--color-blue-petroleum-01);
+}
+
+.page-light #mobile-menu-overlay .overlay-header {
+    background-color: var(--color-offwhite-alabaster-01);
+}
+
+.overlay-logo {
+    grid-column: 1 / 7;
+    /* Match #mdt2 */
+    display: flex;
+    align-items: center;
+    padding-left: calc(100vw / 13);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 25pt;
+    /* Match #mdt2 */
+    line-height: 30pt;
+}
+
+.page-dark .overlay-logo {
+    color: var(--color-orange-terracotta-01);
+}
+
+.page-light .overlay-logo {
+    color: var(--color-blue-petroleum-01);
+}
+
+/* Botón dentro del overlay: sigue la construcción de .hamburger-trigger */
+.overlay-header .hamburger-trigger {
+    grid-column: 11 / 14;
+}
+
+/* Zona de botones */
+#mobile-menu-overlay .overlay-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--grid-row-height) * 1);
+    padding: 2rem 0;
+    min-height: min-content;
+}
+
+/* Botones Overlay: Azul sobre Naranja */
+.mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw * 7 / 13);
+    height: calc(var(--grid-row-height) * 4);
+    border: var(--comp-border-width) solid var(--color-blue-petroleum-01);
+    color: var(--color-blue-petroleum-01);
+    font-family: var(--font-ui);
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 15pt;
+    line-height: 20pt;
+    text-decoration: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    /* No encoger */
+    position: relative;
+    /* Para el marcador si se quisiera, pero usuario dijo NO */
+    background-color: transparent;
+    transition: background-color 300ms var(--motion-ease-in-out-smooth);
+}
+
+/* Estado tap: flash de fondo azul petróleo al 30% */
+.mobile-menu-btn.is-tapping {
+    background-color: rgba(35, 61, 77, 0.3);
+    /* color-blue-petroleum-01 al 30% */
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER (RECONSTRUCCIÓN RADICAL)
+   ══════════════════════════════════════════════════════════ */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-auto-rows: var(--grid-row-height);
+    width: 100%;
+    grid-row: auto;
+    /* Garantiza flujo secuencial */
+    /* Margen Superior (Móvil/Tablet): 4 Líneas */
+    margin-top: calc(var(--grid-row-height) * 4);
+    /* Margen Inferior de Seguridad (Móvil/Tablet): 2 Líneas */
+    padding-bottom: calc(var(--grid-row-height) * 2);
+    box-sizing: border-box;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    color: var(--color-orange-terracotta-01);
+}
+
+#fbt1 {
+    grid-column: 2 / 13;
+    grid-row: 1;
+    justify-content: flex-start;
+}
+
+#fbt2 {
+    grid-column: 2 / 13;
+    grid-row: 2;
+    /* FBT2 en Línea 2 para Móvil, alineado a la derecha */
+    justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(25, 1fr);
+        /* Margen Superior (Tableta): 4 Líneas */
+        margin-top: calc(var(--grid-row-height) * 4);
+        /* Margen Inferior de Seguridad (Tableta): 2 Líneas */
+        padding-bottom: calc(var(--grid-row-height) * 2);
+    }
+
+    #fbt1 {
+        grid-column: 2 / 12;
+        grid-row: 1;
+    }
+
+    #fbt2 {
+        grid-column: 15 / 25;
+        grid-row: 1;
+        /* FBT2 en Línea 1 para Tableta */
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1280px) {
+    .footer-container {
+        grid-template-columns: repeat(42, 1fr);
+        /* Margen Superior (Escritorio): 5 Líneas */
+        margin-top: calc(var(--grid-row-height) * 5);
+        /* Margen Inferior de Seguridad (Escritorio): 3 Líneas */
+        padding-bottom: calc(var(--grid-row-height) * 3);
+    }
+
+    #fbt1 {
+        grid-column: 3 / 15;
+    }
+
+    #fbt2 {
+        grid-column: 28 / 41;
+        justify-content: flex-end;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PAGE TRANSITION OVERLAY
+   ══════════════════════════════════════════════════════════ */
+#page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-blue-petroleum-01);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    /* 350ms ease: simétrico, sin aceleración brusca.
+       Sincronizado con el setTimeout de navigateTo() en components.js */
+    transition: opacity 350ms ease;
+}
+
+#page-transition-overlay.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ─── PROJECT PAGES MARKERS (Blue) ───────────────────────── */
+/* "En blanco los marcadores son azules" */
+.page-light .barra-btn::after {
+    display: block;
+    background-color: var(--color-blue-petroleum-01);
+}

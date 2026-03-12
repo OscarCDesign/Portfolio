@@ -1,0 +1,38 @@
+/* ============================================================
+   GRID — REGLA-GRID-001
+   31.3px por línea. Sin márgenes externos para posicionamiento.
+   Columnas fluidas: Desktop=42, Tablet=25, Mobile=13
+   ============================================================ */
+
+/* Contenedor principal del grid */
+.grid-container {
+    display: grid;
+    grid-auto-rows: var(--grid-row-height);
+    width: 100%;
+    position: relative;
+}
+
+/* ---- MOBILE (< 768px) — 13 columnas ---- */
+.grid-container {
+    grid-template-columns: repeat(13, 1fr);
+}
+
+/* ---- TABLET (768px – 1279px) — 25 columnas ---- */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(25, 1fr);
+    }
+}
+
+/* ---- DESKTOP (>= 1280px) — 42 columnas ---- */
+@media (min-width: 1280px) {
+    .grid-container {
+        grid-template-columns: repeat(42, 1fr);
+    }
+}
+
+/* Elementos que se posicionan en el grid */
+.grid-item {
+    min-height: 0;
+    min-width: 0;
+}
