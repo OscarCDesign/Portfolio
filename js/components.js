@@ -116,6 +116,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* Botón Atrás/Adelante del navegador — bfcache restore
+       El evento `pageshow` se dispara tanto en carga normal como en restauración
+       desde el back-forward cache (persisted = true). DOMContentLoaded NO se
+       vuelve a disparar en ese caso, por eso el overlay quedaba bloqueando. */
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted && pageOverlay) {
+            /* Forzar quitar is-active sin transición para no parpadear */
+            pageOverlay.style.transition = 'none';
+            pageOverlay.classList.remove('is-active');
+            /* Restaurar la transición en el siguiente frame */
+            requestAnimationFrame(() => {
+                pageOverlay.style.transition = '';
+            });
+        }
+    });
+
     /* ── TAP FLASH en botones del overlay móvil ──────────────
        Al tocar un mobile-menu-btn:
        1. Agrega .is-tapping → fondo azul 30% opacity (CSS transition 300ms)
