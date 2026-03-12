@@ -109,19 +109,6 @@ body {
 
 /* ============================================================
    PAGE TRANSITION OVERLAY
-   Overlay que cubre pantalla entre navegaciones.
+   Definición canónica en components.css con clase .is-active
    ============================================================ */
-#page-transition-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: var(--color-blue-petroleum-01);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 9999;
-    transition: opacity 350ms ease;
-}
-
-#page-transition-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
+/* (no duplicar aquí — ver components.css #page-transition-overlay) */

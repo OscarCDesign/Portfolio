@@ -3,6 +3,43 @@
  * Hamburger toggle, overlay con nueva estructura, button markers, page transitions.
  */
 
+// ==========================================================
+// PAGE TRANSITION — limpieza garantizada en bfcache restore
+// Se registra FUERA del DOMContentLoaded para que funcione
+// cuando el navegador restaura la página desde el bfcache
+// (botón Atrás/Adelante). En ese caso DOMContentLoaded NO
+// vuelve a dispararse, pero `pageshow` sí lo hace.
+// ==========================================================
+function clearPageOverlay() {
+    const overlay = document.getElementById('page-transition-overlay');
+    if (!overlay) return;
+    // Desactivar transición para limpieza instantánea sin parpadeo
+    overlay.style.transition = 'none';
+    overlay.classList.remove('is-active');
+    // Restaurar transición en el siguiente frame de pintura
+    requestAnimationFrame(() => {
+        overlay.style.transition = '';
+    });
+}
+
+// pageshow: se dispara en carga normal Y en restauración bfcache (e.persisted = true)
+window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+        // Página restaurada desde bfcache — limpiar overlay inmediatamente
+        clearPageOverlay();
+    }
+});
+
+// visibilitychange: red de seguridad extra para navegadores que no usan bfcache standard
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        clearPageOverlay();
+    }
+});
+
+// ==========================================================
+// LÓGICA PRINCIPAL — se ejecuta en cada carga de página
+// ==========================================================
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================================
@@ -106,31 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { window.location.href = href; }, 350);
     }
 
-    /* Fade in al cargar (quita el overlay si quedó activo de la navegación anterior) */
+    /* Fade in al cargar: quitar overlay en carga normal de página */
     if (pageOverlay) {
-        /* Pequeño delay para permitir que el CSS transición esté listo */
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 pageOverlay.classList.remove('is-active');
             });
         });
     }
-
-    /* Botón Atrás/Adelante del navegador — bfcache restore
-       El evento `pageshow` se dispara tanto en carga normal como en restauración
-       desde el back-forward cache (persisted = true). DOMContentLoaded NO se
-       vuelve a disparar en ese caso, por eso el overlay quedaba bloqueando. */
-    window.addEventListener('pageshow', (e) => {
-        if (e.persisted && pageOverlay) {
-            /* Forzar quitar is-active sin transición para no parpadear */
-            pageOverlay.style.transition = 'none';
-            pageOverlay.classList.remove('is-active');
-            /* Restaurar la transición en el siguiente frame */
-            requestAnimationFrame(() => {
-                pageOverlay.style.transition = '';
-            });
-        }
-    });
 
     /* ── TAP FLASH en botones del overlay móvil ──────────────
        Al tocar un mobile-menu-btn:
