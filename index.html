@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Oscar C. — Portfolio</title>
+  <meta name="description" content="Multidisciplinary designer Portfolio and Information." />
+
+  <!-- League Gothic — Accent, Titles, Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+
+  <!-- Space Mono — Body, Subtitles, Navigation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════ PRELOADER ═══════════════════════════ -->
+  <div id="preloader">
+    <div class="preloader-counter">
+      <span id="preloader-number" class="league-gothic-display">0</span>
+    </div>
+    <div class="preloader-progress-bar">
+      <div class="preloader-progress" id="preloader-progress"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo space-mono-bold" id="nav-logo">OSCAR C.</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#projects" class="space-mono-regular" id="nav-works">Works</a>
+      <span class="nav-sep space-mono-regular">/</span>
+      <a href="#about-section" class="space-mono-regular" id="nav-about">About</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Background portrait with reveal -->
+    <div class="hero-bg" id="hero-bg">
+      <img src="Assets/Portada.4.jpg" alt="Designer portrait" id="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Main hero header -->
+    <div class="hero-card" id="hero-header">
+      <div class="card-top">
+        <span class="space-mono-regular card-label">Multidisciplinary Designer</span>
+        <h1 class="card-title league-gothic-display">
+          <span>SHAPES</span>
+          <span>THAT</span>
+          <span>SPEAK</span>
+        </h1>
+      </div>
+      <div class="card-bottom">
+        <span class="space-mono-regular card-sublabel">Portfolio</span>
+        <div class="card-year league-gothic-display">‘26</div>
+      </div>
+    </div>
+
+    <!-- Hero footer info -->
+    <div class="hero-footer" id="hero-footer">
+      <div class="hero-footer-left">
+        <p class="space-mono-regular hero-label" id="hero-label">Based in Guadalajara, Jalisco, México</p>
+        <p class="space-mono-regular-italic hero-role" id="hero-role">Storytelling / Product Design / Branding</p>
+      </div>
+      <div class="hero-footer-right">
+        <p class="space-mono-regular hero-avail" id="hero-avail">Available for projects</p>
+        <div class="avail-dot" id="avail-dot"></div>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progress-bar">
+      <div class="progress" id="progress-fill"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ WORKS SHOWCASE ═══════════════════════════ -->
+  <section class="works-section" id="projects" role="region" aria-label="Selected works">
+
+    <!-- Top label -->
+    <div class="works-section-header">
+      <span class="space-mono-regular works-section-label">Selected Works</span>
+    </div>
+
+    <!-- Video stage -->
+    <div class="works-stage">
+
+      <!-- Left info panel -->
+      <div class="works-side works-side--left" id="works-side-left">
+        <h2 class="works-project-title league-gothic-display" id="works-title">GOLONDRINAS</h2>
+        <p class="works-project-tag space-mono-regular" id="works-tag">Brand Identity &amp; Product Design &amp; User
+          Journey</p>
+      </div>
+
+      <!-- Video display -->
+      <div class="works-video-wrapper" id="works-video-wrapper">
+        <!-- Skip button -->
+        <button class="works-skip-btn" id="works-skip-btn" aria-label="Next project">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 3l10 5-10 5V3z" fill="currentColor" />
+            <rect x="12" y="3" width="2" height="10" rx="1" fill="currentColor" />
+          </svg>
+        </button>
+
+        <!-- Progress bar inside video -->
+        <div class="works-video-progress" id="works-video-progress">
+          <div class="works-video-progress-fill" id="works-video-progress-fill"></div>
+        </div>
+
+        <!-- Videos stacked, only active one plays -->
+        <div class="works-videos" id="works-videos">
+          <video class="works-video works-video--active" id="works-vid-0" src="" muted playsinline preload="none"
+            data-index="0">"Assets/Swall/SF1.mp4"</video>
+          <video class="works-video" id="works-vid-1" src="" muted playsinline preload="none"
+            data-index="1">"Assets/Vibec/VF1.mp4"</video>
+          <video class="works-video" id="works-vid-2" src="" muted playsinline preload="none"
+            data-index="2">"Assets/MiITESO/MF1.mp4"</video>
+          <video class="works-video" id="works-vid-3" src="" muted playsinline preload="none"
+            data-index="3">"Assets/OKDJ/OF1.mp4"</video>
+          <video class="works-video" id="works-vid-4" src="" muted playsinline preload="none"
+            data-index="4">"Assets/NutM/NMF1.mp4"</video>
+          <video class="works-video" id="works-vid-5" src="" muted playsinline preload="none"
+            data-index="5">"Assets/NutD/NDF1.mp4"</video>
+
+          <!-- Poster fallback shown when no video src -->
+          <div class="works-poster" id="works-poster">
+            <img src="Assets/Loading.jpeg" alt="Project preview" id="works-poster-img" />
+            <div class="works-poster-overlay"></div>
+          </div>
+        </div>
+
+        <!-- Click-to-open overlay -->
+        <a href="#" class="works-video-link" id="works-video-link" aria-label="View project"></a>
+      </div>
+
+      <!-- Right info panel -->
+      <div class="works-side works-side--right" id="works-side-right">
+        <span class="works-ref space-mono-regular" id="works-ref">OSCAR C.&nbsp;•&nbsp;FIN&nbsp;•&nbsp;001</span>
+        <span class="works-discipline space-mono-regular" id="works-discipline">Senior Designer&nbsp;•&nbsp;UX
+          Tester</span>
+        <span class="works-year space-mono-regular" id="works-year">2025</span>
+      </div>
+
+    </div><!-- /works-stage -->
+
+    <!-- Carousel controls row -->
+    <div class="works-controls" id="works-controls">
+
+      <!-- Prev arrow -->
+      <button class="works-arrow works-arrow--prev" id="works-prev" aria-label="Previous project">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M10 2L4 7l6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <!-- Carousel -->
+      <div class="works-carousel-viewport" id="works-carousel-viewport">
+        <div class="works-carousel-track" id="works-carousel-track">
+
+          <button class="works-carousel-item works-carousel-item--active" data-index="0"
+            aria-label="Project 1: GOLONDRINAS">
+            <img src="Assets/Carrusel/Golondrinas.jpg" alt="GOLONDRINAS" />
+          </button>
+
+          <button class="works-carousel-item" data-index="1" aria-label="Project 2: Vibe Coding">
+            <img src="Assets/Carrusel/Vibe Coding.jpg" alt="Vibe Coding" />
+          </button>
+
+          <button class="works-carousel-item" data-index="2" aria-label="Project 3: MI ITESO">
+            <img src="Assets/Carrusel/Mi ITESO.jpg" alt="Mi ITESO" />
+          </button>
+
+          <button class="works-carousel-item" data-index="3" aria-label="Project 4: OKDJ">
+            <img src="Assets/Carrusel/OKDJ.jpg" alt="OKDJ" />
+          </button>
+
+          <button class="works-carousel-item" data-index="4" aria-label="Project 5: Nutricia Mobile">
+            <img src="Assets/Carrusel/Nutricia M.jpg" alt="Nutricia Mobile" />
+          </button>
+
+          <button class="works-carousel-item" data-index="5" aria-label="Project 6: Nutricia Desktop">
+            <img src="Assets/Carrusel/Nutricia D.jpg" alt="Nutricia Desktop" />
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Next arrow -->
+      <button class="works-arrow works-arrow--next" id="works-next" aria-label="Next project">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M4 2l6 5-6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+    </div><!-- /works-controls -->
+
+  </section>
+
+  <!-- ═══════════════════════════ MANIFESTO ═══════════════════════════ -->
+  <section class="manifesto-section" id="manifesto">
+    <div class="manifesto-inner">
+      <p class="space-mono-regular manifesto-label" id="manifesto-label">/ Statement</p>
+      <h2 class="manifesto-text league-gothic-display" id="manifesto-text">
+        SIGNATURE STORIES.<br>
+        ARCHITECTING MEANING.<br>
+        STRATEGIC FRAMEWORKS.
+      </h2>
+      <p class="space-mono-regular manifesto-body" id="manifesto-body">
+        Brand strategy triggers the spark, but product design scales the ecosystem.<br>-<br>
+        Every decision carries weight; every mark carries intention.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT TEASER ═══════════════════════════ -->
+  <section class="about-section" id="about-section">
+    <div class="about-inner">
+      <div class="about-left">
+        <p class="space-mono-regular about-index" id="about-index">/ Info</p>
+        <h2 class="league-gothic-display about-title" id="about-title">ABOUT</h2>
+        <p class="space-mono-regular about-body" id="about-body">
+          Multidisciplinary designer with skills in gamification and storytelling.<br>
+          Formerly Senior and Product Designer.<br><br>
+          Currently based in Guadalajara-México, working globally.
+        </p>
+        <a href="full-profile.html" class="about-link space-mono-bold" id="profile-link">
+          Full profile →
+        </a><br><br>
+        <a href="#" class="about-link space-mono-bold" id="download-cv-link">
+          Download CV →
+        </a>
+      </div>
+      <div class="about-right" id="about-right">
+        <div class="about-services">
+          <p class="space-mono-bold services-title" id="services-title">Core Skills</p>
+          <ul class="services-list" id="services-list">
+            <li class="space-mono-regular">Product Design</li>
+            <li class="space-mono-regular">Animation</li>
+            <li class="space-mono-regular">Vibe Coding</li>
+            <li class="space-mono-regular">Branding</li>
+            <li class="space-mono-regular">Illustration</li>
+            <li class="space-mono-regular">Storytelling</li>
+            <li class="space-mono-regular">Content Creation</li>
+            <li class="space-mono-regular">Gamification</li>
+          </ul>
+        </div>
+        <div class="about-year">
+          <span class="league-gothic-display year-number" id="year-number">2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="league-gothic-display footer-logo" id="footer-logo">OSCAR C.</span>
+        <p class="space-mono-regular footer-tagline" id="footer-tagline">Multidisciplinary Designer</p>
+      </div>
+      <div class="footer-center">
+        <h2 class="league-gothic-display footer-cta-text" id="footer-cta-text">LET'S BUILD<br>TOGETHER</h2>
+        <a href="EMAIL" class="footer-email space-mono-bold" id="footer-email">carreno_oscar@outlook.com</a>
+      </div>
+      <div class="footer-right">
+        <div class="footer-socials" id="footer-socials">
+          <a href="tel:+523312252089" class="space-mono-regular social-link" id="social-phone-number">+52 33 1225
+            2089</a>
+          <a href="https://www.linkedin.com/in/oscar-alejandro-carreño-torres-80aa64203" target="_blank"
+            rel="noopener noreferrer" class="space-mono-regular social-link" id="social-linkedin">LinkedIn</a>
+        </div>
+        <p class="space-mono-regular footer-copy" id="footer-copy">© 2026 — All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

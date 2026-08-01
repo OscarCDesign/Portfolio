@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Oscar Carreño — Full Profile</title>
+  <meta name="description"
+    content="Full professional profile of Oscar Alejandro Carreño Torres — Multidisciplinary Designer shaping brands, products and stories." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="full-profile.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo space-mono-bold" id="nav-logo">OSCAR C.</a>
+  </nav>
+
+  <!-- ══════════════ CHAPTER 1: HERO ══════════════ -->
+  <section class="fp-hero-wrapper" id="ch-hero">
+    <div class="fp-hero-sticky">
+
+      <!-- Dark base background -->
+      <div class="fp-hero-dark-bg"></div>
+
+      <!-- Expanding mask container holding 5 images -->
+      <div class="fp-hero-mask-box" id="hero-mask-box">
+        <div class="fp-hero-slides">
+          <div class="fp-hero-slide is-active" id="hero-slide-0">
+            <img src="Assets/Perfil/Hero/hero_1.jpg" alt="Oscar Carreño" />
+          </div>
+          <div class="fp-hero-slide" id="hero-slide-1">
+            <img src="Assets/Perfil/Hero/hero_2.jpg" alt="Golondrinas" />
+          </div>
+          <div class="fp-hero-slide" id="hero-slide-2">
+            <img src="Assets/Perfil/Hero/hero_3.jpg" alt="Vibe Coding" />
+          </div>
+          <div class="fp-hero-slide" id="hero-slide-3">
+            <img src="Assets/Perfil/Hero/hero_4.jpg" alt="Mi ITESO" />
+          </div>
+          <div class="fp-hero-slide" id="hero-slide-4">
+            <img src="Assets/Perfil/Hero/hero_5.jpg" alt="OKDJ" />
+          </div>
+        </div>
+        <div class="fp-hero-mask-overlay"></div>
+      </div>
+
+      <!-- Center content: Left text, Center square anchor, Right text -->
+      <div class="fp-hero-center-content">
+        <div class="fp-hero-text-left" id="hero-text-left">
+          <h1 class="fp-hero-title-side league-gothic-display">TO FRAME</h1>
+          <p class="fp-hero-sub-side space-mono-regular">OSCAR</p>
+        </div>
+
+        <div class="fp-hero-center-square" id="hero-center-square"></div>
+
+        <div class="fp-hero-text-right" id="hero-text-right">
+          <h1 class="fp-hero-title-side league-gothic-display">IT ALL .</h1>
+          <p class="fp-hero-sub-side space-mono-regular">CARREÑO</p>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator (Sticky on screen until end of hero) -->
+      <div class="fp-hero-scroll" id="fp-scroll-hint">
+        <span class="space-mono-regular">Scroll</span>
+        <div class="fp-scroll-bar"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ CHAPTER 2: STATEMENT (PINNED) ══════════════ -->
+  <div class="fp-pin-wrapper" id="ch-statement">
+    <div class="fp-pin-inner">
+      <p class="fp-statement-text league-gothic-display" id="statement-text">
+        <span class="word"><span>CRAFTING</span></span>&nbsp;
+        <span class="word"><span>STORIES</span></span>&nbsp;
+        <span class="word"><span>THROUGH</span></span>&nbsp;
+        <span class="word"><span>SHAPES,</span></span>&nbsp;
+        <span class="word"><span>LINES</span></span>&nbsp;
+        <span class="word"><span>AND</span></span>&nbsp;
+        <span class="word"><span>PICTURES.</span></span><br>
+        <span class="word"><span>MEET</span></span>&nbsp;
+        <span class="word"><span>ME</span></span>&nbsp;
+        <span class="word"><span>IN</span></span>&nbsp;
+        <span class="word"><span>THE</span></span>&nbsp;
+        <span class="word"><span>JOURNEY.</span></span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════════ CHAPTER 2.5: AREAS OF DESIGN (SCROLL SPY) ══════════════ -->
+  <div class="fp-areas-wrapper" id="ch-areas">
+    <div class="fp-areas-sticky">
+
+      <!-- Left: visual that swaps to match the highlighted area -->
+      <div class="fp-areas-visual">
+        <div class="fp-areas-img is-active" id="area-img-0">
+          <img src="Assets/Perfil/Areas/UI & Product Design.jpg" alt="Product Design" />
+        </div>
+        <div class="fp-areas-img" id="area-img-1">
+          <img src="Assets/Perfil/Areas/Brand Identity.jpg" alt="Brand Identity" />
+        </div>
+        <div class="fp-areas-img" id="area-img-2">
+          <img src="Assets/Perfil/Areas/UX Research.jpg" alt="UX Research & Testing" />
+        </div>
+        <div class="fp-areas-img" id="area-img-3">
+          <img src="Assets/Perfil/Areas/Motion Animation.jpg" alt="Motion & Animation" />
+        </div>
+        <div class="fp-areas-img" id="area-img-4">
+          <img src="Assets/Perfil/Areas/Illustration.jpg" alt="Illustration" />
+        </div>
+        <div class="fp-areas-img" id="area-img-5">
+          <img src="Assets/Perfil/Areas/Vibe Coding.jpg" alt="Vibe Coding" />
+        </div>
+        <div class="fp-areas-img" id="area-img-6">
+          <img src="Assets/Perfil/Areas/Storytelling.png" alt="Storytelling" />
+        </div>
+        <div class="fp-areas-img" id="area-img-7">
+          <img src="Assets/Perfil/Areas/Gamification.png" alt="Gamification Design" />
+        </div>
+      </div>
+
+      <!-- Right: a scrolling "reel" — items travel past the center line;
+           whichever crosses it becomes highlighted. -->
+      <div class="fp-areas-list-mask">
+        <span class="fp-areas-list-title space-mono-regular">Areas of Focus</span>
+
+        <div class="fp-areas-scroll-window">
+          <div class="fp-areas-center-line"></div>
+          <div class="fp-areas-list" id="areas-list">
+            <div class="fp-area-item is-active" data-idx="0">
+              <span class="fp-area-num space-mono-regular">01</span>
+              <span class="fp-area-name league-gothic-display">Product Design</span>
+            </div>
+            <div class="fp-area-item" data-idx="1">
+              <span class="fp-area-num space-mono-regular">02</span>
+              <span class="fp-area-name league-gothic-display">Brand Identity</span>
+            </div>
+            <div class="fp-area-item" data-idx="2">
+              <span class="fp-area-num space-mono-regular">03</span>
+              <span class="fp-area-name league-gothic-display">UX Research</span>
+            </div>
+            <div class="fp-area-item" data-idx="3">
+              <span class="fp-area-num space-mono-regular">04</span>
+              <span class="fp-area-name league-gothic-display">Motion &amp; Animation</span>
+            </div>
+            <div class="fp-area-item" data-idx="4">
+              <span class="fp-area-num space-mono-regular">05</span>
+              <span class="fp-area-name league-gothic-display">Illustration</span>
+            </div>
+            <div class="fp-area-item" data-idx="5">
+              <span class="fp-area-num space-mono-regular">06</span>
+              <span class="fp-area-name league-gothic-display">Vibe Coding</span>
+            </div>
+            <div class="fp-area-item" data-idx="6">
+              <span class="fp-area-num space-mono-regular">07</span>
+              <span class="fp-area-name league-gothic-display">Storytelling</span>
+            </div>
+            <div class="fp-area-item" data-idx="7">
+              <span class="fp-area-num space-mono-regular">08</span>
+              <span class="fp-area-name league-gothic-display">Gamification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════ CHAPTER 3: BIO (INTRO) — B&W image left, fading right, inline-label paragraphs ══════════════ -->
+  <section class="fp-intro chapter" id="ch-intro">
+    <div class="fp-intro-media">
+      <img class="fp-intro-img" id="intro-img" src="Assets/Portada.3.jpg" alt="Oscar Carreño" />
+      <div class="fp-intro-media-dark"></div>
+    </div>
+
+    <div class="fp-intro-content">
+      <p class="fp-intro-line space-mono-bold">
+        <span class="fp-intro-line-label">Who am I.</span>
+        <span class="fp-intro-line-text">I was born in Guadalajara, Mexico (2000), I pursued a degree in Design,not
+          merely as a craft-focused discipline, but as a strategic framework for architecting sustainable solutions. My
+          approach is rooted in uncovering the latent needs buried within complex layers of research to build meaningful
+          user experiences.</span>
+      </p>
+      <p class="fp-intro-line space-mono-bold">
+        <span class="fp-intro-line-label">What drives me.</span>
+        <span class="fp-intro-line-text">My background divides between Brand Strategy and Product Design. Experience at
+          a specialized marketing agency sharpened my understanding of brand positioning teaching me to desing with an
+          intention. I pivoted toward scalable UI and rigorous UX Research.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════ CHAPTER 6: EXPERIENCE TIMELINE ══════════════ -->
+  <section class="fp-timeline-section chapter" id="ch-timeline">
+    <div class="fp-timeline-header">
+      <span class="fp-tl-label space-mono-regular">/ Experience</span>
+      <h2 class="fp-tl-heading league-gothic-display">The Work<br>Behind<br>the Work</h2>
+    </div>
+    <div class="fp-tl-track">
+      <div class="fp-tl-spine">
+        <div class="fp-tl-spine-fill"></div>
+      </div>
+      <div class="fp-tl-items">
+        <div class="fp-tl-item">
+          <span class="fp-tl-dot"></span>
+          <span class="fp-tl-year space-mono-regular">Nov 2022 - Present</span>
+          <div>
+            <p class="fp-tl-role league-gothic-display">UX/UI Design Partner | Ulab ITESO</p>
+            <p class="fp-tl-company space-mono-regular">Guadalajara, Jal
+            <p class="fp-tl-desc space-mono-regular">UX research | Branding systems | Wireframes | User interfaces for
+              SaaS, B2B, B2C, and CMS | Usability analysis using focus groups and behavioral labs.</p>
+          </div>
+        </div>
+        <div class="fp-tl-item">
+          <span class="fp-tl-dot"></span>
+          <span class="fp-tl-year space-mono-regular">Aug 2023 - Dic 2023</span>
+          <div>
+            <p class="fp-tl-role league-gothic-display">Senior Designer | Vadeto Group</p>
+            <p class="fp-tl-company space-mono-regular">Guadalajara, Jal</p>
+            <p class="fp-tl-desc space-mono-regular">Lead design decisions | Internal and external communication assets
+              | Assets for Amazon, first-party webstores, and third-party marketplaces | Product packaging | Product
+              photography and video editing | Content creation.</p>
+          </div>
+        </div>
+        <div class="fp-tl-item">
+          <span class="fp-tl-dot"></span>
+          <span class="fp-tl-year space-mono-regular">Jun 2020 - Aug 2023</span>
+          <div>
+            <p class="fp-tl-role league-gothic-display">Creative Designer | The Right Position Marketing</p>
+            <p class="fp-tl-company space-mono-regular">Guadalajara, Jal</p>
+            <p class="fp-tl-desc space-mono-regular">Content creation | Design banners, packaging, promotional
+              materials, and print formats | Design products, stands, logos, and complete branding | Gameboard design |
+              Creative concepts for digital marketing and BTL.</p>
+          </div>
+        </div>
+        <div class="fp-tl-item">
+          <span class="fp-tl-dot"></span>
+          <span class="fp-tl-year space-mono-regular">Aug 2018 - May 2023</span>
+          <div>
+            <p class="fp-tl-role league-gothic-display">Bachelor of Design | ITESO</p>
+            <p class="fp-tl-company space-mono-regular">Guadalajara, Jal</p>
+            <p class="fp-tl-desc space-mono-regular">_Create content for diverse social media platforms.<br>
+              _Design banners, packaging, promotional materials, and print formats.<br>
+              _Design products, stands, logos, and complete branding.<br>
+              _Gameboard design and development.<br>
+              _Develop creative concepts for digital marketing and BTL campaigns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CHAPTER 7: DESIGN PHILOSOPHY — "trophy shelf" ══════════════ -->
+  <section class="fp-philosophy chapter" id="ch-philosophy">
+    <span class="fp-philo-label space-mono-regular">/ Design Philosophy</span>
+
+    <div class="fp-philo-shelf-row">
+      <div class="fp-philo-trophy">
+        <div class="fp-philo-icon-badge">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
+            stroke-linecap="round">
+            <path d="M24 6 L43 16 L24 26 L5 16 Z" />
+            <path d="M5 24 L24 34 L43 24" />
+            <path d="M5 32 L24 42 L43 32" />
+          </svg>
+        </div>
+        <span class="fp-philo-pedestal"></span>
+        <p class="fp-philo-title league-gothic-display">Systems Before Surfaces</p>
+        <p class="fp-philo-quote space-mono-regular">Structure first, beauty follows.</p>
+      </div>
+      <div class="fp-philo-trophy">
+        <div class="fp-philo-icon-badge">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
+            stroke-linecap="round">
+            <path
+              d="M24 41 C11 32 5 24 5 15.5 C5 9.5 9.8 5 15.5 5 C19.3 5 22.5 7 24 11 C25.5 7 28.7 5 32.5 5 C38.2 5 43 9.5 43 15.5 C43 24 37 32 24 41 Z" />
+          </svg>
+        </div>
+        <span class="fp-philo-pedestal"></span>
+        <p class="fp-philo-title league-gothic-display">Empathy is the Brief</p>
+        <p class="fp-philo-quote space-mono-regular">Design for people, not for briefs.</p>
+      </div>
+      <div class="fp-philo-trophy">
+        <div class="fp-philo-icon-badge">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="6" y="6" width="36" height="36" rx="3" />
+            <circle cx="24" cy="24" r="2.6" fill="currentColor" stroke="none" />
+          </svg>
+        </div>
+        <span class="fp-philo-pedestal"></span>
+        <p class="fp-philo-title league-gothic-display">Restraint as Craft</p>
+        <p class="fp-philo-quote space-mono-regular">What you leave out defines the rest.</p>
+      </div>
+      <div class="fp-philo-trophy">
+        <div class="fp-philo-icon-badge">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
+            stroke-linecap="round">
+            <path
+              d="M24 12 C20 8.5 12 7.5 6 9.5 V37 C12 35 20 36 24 39.5 C28 36 36 35 42 37 V9.5 C36 7.5 28 8.5 24 12 Z" />
+            <line x1="24" y1="12" x2="24" y2="39.5" />
+          </svg>
+        </div>
+        <span class="fp-philo-pedestal"></span>
+        <p class="fp-philo-title league-gothic-display">Story Over Style</p>
+        <p class="fp-philo-quote space-mono-regular">No narrative, no design.</p>
+      </div>
+    </div>
+    <div class="fp-philo-shelf-line"></div>
+  </section>
+
+  <!-- ══════════════ CHAPTER 8: PERSONAL — bento grid collage ══════════════ -->
+  <section class="fp-personal chapter" id="ch-personal">
+    <span class="fp-personal-label space-mono-regular">/ Beyond the Desk</span>
+    <h2 class="fp-personal-heading league-gothic-display">Framing<br>the Person</h2>
+
+    <!--
+      Bento grid: cada celda es .fp-bento-item, con clases modificadoras
+      opcionales (.fp-bento-wide / .fp-bento-tall / .fp-bento-big) para
+      variar el tamaño. Agrega o quita celdas libremente — el grid se
+      auto-acomoda (grid-auto-flow: dense en CSS).
+      Para video: reemplaza el <img> por un <video autoplay muted loop
+      playsinline> con el mismo src de referencia.
+    -->
+    <div class="fp-bento-grid">
+      <div class="fp-bento-item">
+        <img src="Assets/Perfil/Bento/Bento_01.jpg" alt="Personal work" />
+      </div>
+      <div class="fp-bento-item">
+        <img src="Assets/Perfil/Bento/Bento_02.jpg" alt="Personal work" />
+      </div>
+      <div class="fp-bento-item">
+        <img src="Assets/Perfil/Bento/Bento_03.jpg" alt="Personal work" />
+      </div>
+      <div class="fp-bento-item fp-bento-tall">
+        <video autoplay muted loop playsinline>
+          <source src="Assets/Perfil/Bento/Bento_04.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="fp-bento-item">
+        <img src="Assets/Perfil/Bento/Bento_05.jpg" alt="Personal work" />
+      </div>
+      <div class="fp-bento-item">
+        <img src="Assets/Perfil/Bento/Bento_06.jpg" alt="Personal work" />
+      </div>
+      <div class="fp-bento-item fp-bento-wide">
+        <img src="Assets/Perfil/Bento/Bento_07.jpg" alt="Personal work" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CHAPTER 9: TOOLS — icon grid ══════════════ -->
+  <!--
+    Grid de íconos con marcas de esquina (estilo referencia de logos/premios).
+    Cada .fp-tool-cell trae un placeholder circular con las iniciales —
+    reemplázalo por tu ícono real (img o svg) cuando lo tengas: solo
+    sustituye el contenido de .fp-tool-icon-placeholder.
+  -->
+  <div class="fp-tools-grid" id="fp-tools-grid">
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Photoshop</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Illustrator</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Figma</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Adobe XD</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">After Effects</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Premiere</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Gemini</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Antigravity</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Claude</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Framer</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Spline</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">GitHub</div>
+    </div>
+    <div class="fp-tool-cell">
+      <div class="fp-tool-icon-placeholder space-mono-bold">Asana</div>
+    </div>
+  </div>
+
+  <!-- ══════════════ CHAPTER 10: DYNAMIC SCROLL CTA ══════════════ -->
+  <section class="fp-cta-dynamic-wrapper" id="ch-cta">
+
+    <!-- Top banner: recorte rectangular centrado que alberga la posición inicial del card -->
+    <div class="fp-cta-banner fp-cta-banner-top" id="fp-cta-banner-top"></div>
+
+    <!--
+    Bloque sticky: alberga la galería de fondo y el card.
+    Los márgenes negativos permiten que el card inicie encajado en el receso del
+    banner superior, viaje centrado con el scroll y finalmente embone en el banner inferior.
+  -->
+    <div class="fp-cta-sticky-block" id="fp-cta-sticky-block">
+      <div class="fp-cta-image-gallery" id="fp-cta-image-gallery">
+        <div class="fp-cta-bg-item is-active"><img src="Assets/Perfil/Final/F_01.png" alt="Portfolio showcase 1" />
+        </div>
+        <div class="fp-cta-bg-item"><img src="Assets/Perfil/Final/F_02.png" alt="Portfolio showcase 2" /></div>
+        <div class="fp-cta-bg-item"><img src="Assets/Perfil/Final/F_03.png" alt="Portfolio showcase 3" /></div>
+        <div class="fp-cta-bg-item"><img src="Assets/Perfil/Final/F_04.png" alt="Portfolio showcase 4" /></div>
+        <div class="fp-cta-bg-item"><img src="Assets/Perfil/Final/F_05.jpg" alt="Portfolio showcase 5" /></div>
+        <div class="fp-cta-gallery-overlay"></div>
+      </div>
+
+      <div class="fp-cta-card-element" id="fp-cta-card-element">
+        <div class="fp-cta-card-inner space-mono-bold">
+          <span>THE PIECE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom banner: recorte rectangular inferior para recibir el card -->
+    <div class="fp-cta-banner fp-cta-banner-bottom" id="fp-cta-banner-bottom">
+      <div class="fp-cta-side-text fp-text-right space-mono-regular">
+        <span class="fp-cta-sublink">YOU´VE FOUND</span>
+      </div>
+      <div class="fp-cta-side-text fp-text-left space-mono-regular">
+        <span class="fp-cta-sublink">YOU NEEDED</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="league-gothic-display footer-logo" id="footer-logo">OSCAR C.</span>
+        <p class="space-mono-regular footer-tagline" id="footer-tagline">Multidisciplinary Designer</p>
+      </div>
+      <div class="footer-center">
+        <h2 class="league-gothic-display footer-cta-text" id="footer-cta-text">LET'S BUILD<br>TOGETHER</h2>
+        <a href="mailto:carreno_oscar@outlook.com" class="footer-email space-mono-bold"
+          id="footer-email">carreno_oscar@outlook.com</a>
+      </div>
+      <div class="footer-right">
+        <div class="footer-socials" id="footer-socials">
+          <a href="tel:+523312252089" class="space-mono-regular social-link" id="social-phone-number">+52 33 1225
+            2089</a>
+          <a href="https://www.linkedin.com/in/oscar-alejandro-carreño-torres-80aa64203" target="_blank"
+            rel="noopener noreferrer" class="space-mono-regular social-link" id="social-linkedin">LinkedIn</a>
+        </div>
+        <p class="space-mono-regular footer-copy" id="footer-copy">© 2026 — All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="full-profile.js"></script>
+</body>
+
+</html>
