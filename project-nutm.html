@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Nutricia Desktop App</title>
+    <meta name="description" content="Proyecto Nutricia Desktop — detalle del trabajo de diseño.">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+</head>
+
+<body class="page-light">
+    <div id="page-transition-overlay" style="background-color: var(--color-offwhite-alabaster-01);"></div>
+
+    <!-- MENU-BLANCO -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn" data-transition>WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (PP-NM Matrix) -->
+    <main class="project-main main-container" aria-label="Proyecto Nutricia Mobile">
+        <div class="pp-grid">
+
+            <!-- PNMDT1 -->
+            <h1 class="pxdt1 motion-fade-move-up">Nutricia<br>Mobile App</h1>
+
+            <!-- PNMBT1 (FLAG-ALL-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_ALL_P" data-variant="true">Saved the best for last? I appreciate your thorough
+                    review of my work.<br>...<br>Nutricia is a nutrition clinic located on the ITESO University campus,
+                    providing specialized services and benefits to the student community. When I took over the project,
+                    the clinic relied on an external application for patient follow-ups, which severely restricted
+                    client interactions and service management. Furthermore, their appointment scheduling was handled
+                    entirely through email requests, creating a cumbersome and inefficient process for both the staff
+                    and the clients.</span>
+                <span data-flag="FLAG_ALL_P" data-variant="false">Nutricia is a nutrition clinic located on the
+                    ITESO University campus, providing specialized services and benefits to the student community. When
+                    I took over the project, the clinic relied on an external application for patient follow-ups, which
+                    severely restricted client interactions and service management. Furthermore, their appointment
+                    scheduling was handled entirely through email requests, creating a cumbersome and inefficient
+                    process for both the staff and the clients.</span>
+            </p>
+
+            <!-- PNMBT2 (FLAG-FIRST-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_FIRST_P" data-variant="true">Great choice to start with.<br>...<br><span
+                        class="destacado">Year:</span> 2022-2023<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> UX/UI Designer</span>
+                <span data-flag="FLAG_FIRST_P" data-variant="false"><span class="destacado">Year:</span>
+                    2022-2023<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> UX/UI Designer</span>
+            </p>
+
+            <!-- PNMBT3 -->
+            <p class="pxbt motion-fade-move-up">
+                <span class="caption">(The following video provides an illustrative introduction to the
+                    project)<br><br></span>
+            </p>
+
+            <!-- PNMF1: L+2 -->
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/NutM/NMF1.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+
+            <!-- PNMBT4: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                By utilizing the horizontal line as a core motif, the application communicates transition, process, and
+                consistency. Everything in the design parts from this line as the primary narrative element, serving as
+                the foundation for navigation, interaction, and information hierarchy. To elevate the minimalist
+                framework, I replaced solid backgrounds with vibrant imagery of fruits and vegetables, creating a rich
+                contrast against the clean, compressed typography and icons layered over gradients and transparencies.
+            </p>
+
+            <!-- PNMF2-PNMF4 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/NutM/NMF2.jpg" alt="PNMF2 — NUTM" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutM/NMF3.jpg" alt="PNMF3 — NUTM" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutM/NMF4.jpg" alt="PNMF4 — NUTM" loading="lazy">
+            </div>
+
+            <!-- PNMBT5: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                I implemented a pre-consultation registration flow that integrates student ID verification to unlock
+                campus-specific benefits. Within the app, the architecture is organized into distinct sections: a
+                personalized progress dashboard with dynamic scheduling prompts, a service directory with real-time
+                availability, and a comprehensive log for tracking appointment agendas and payment history.<br><br>
+                To resolve scheduling conflicts caused by frequent cancellations, I integrated a "Waiting List"
+                mechanic. This feature allows users to register for unavailable time slots; if a slot opens up, the
+                system automatically reallocates the space. This automation ensures the clinic’s schedule remains
+                optimized while providing users with immediate access to newly freed appointments.
+            </p>
+
+            <!-- PNMF5-PNMF9 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/NutM/NMF5.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/NutM/NMF6.jpg" alt="PNMF6 — NUTM" loading="lazy">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

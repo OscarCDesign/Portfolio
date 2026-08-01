@@ -1,0 +1,29 @@
+/* Main CSS Entry Point */
+
+@import 'reset.css';
+@import 'tokens.css';
+@import 'grid.css';
+@import 'components.css';
+@import 'utilities.css';
+@import 'motion.css';
+
+/* Global Styles */
+body {
+    /* Smooth background transition for atmosphere change */
+    transition: background-color var(--motion-duration-main) var(--motion-ease-in-out-smooth);
+    opacity: 0;
+    /* Start hidden for page transition IN */
+    animation: pageEnter var(--motion-duration-main) ease-out forwards;
+}
+
+@keyframes pageEnter {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Page Exit Class */
+body.page-exit {
+    opacity: 0;
+    transition: opacity var(--motion-duration-main) ease-out;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — MI ITESO College App</title>
+    <meta name="description" content="Proyecto MI ITESO — detalle del trabajo de diseño.">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+</head>
+
+<body class="page-light">
+    <div id="page-transition-overlay" style="background-color: var(--color-offwhite-alabaster-01);"></div>
+
+    <!-- MENU-BLANCO -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn" data-transition>WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (PP-M Matrix) -->
+    <main class="project-main main-container" aria-label="Proyecto MI ITESO">
+        <div class="pp-grid">
+
+            <!-- PMDT1 -->
+            <h1 class="pxdt1 motion-fade-move-up">MI ITESO<br>College App</h1>
+
+            <!-- PMBT1 (FLAG-ALL-P) -->
+            <p class="pxbt motion-fade-move-up" id="pmbt1">
+                <span data-flag="FLAG_ALL_P" data-variant="true">Saved the best for last? I appreciate your thorough
+                    review of my work.<br>...<br>During my tenure as a designer at Ulab, one of my most significant and
+                    high-impact projects was Mi ITESO. Ulab operates as an in-house venture of ITESO University. The
+                    fragmented nature of the university's digital tools and the evolving lifestyle of its community
+                    demanded a unified platform. I designed this solution to converge information for students, faculty,
+                    and employees while increasing the retention rate across all institutional systems.</span>
+                <span data-flag="FLAG_ALL_P" data-variant="false">During my tenure as a designer at Ulab, one of my most
+                    significant and
+                    high-impact projects was Mi ITESO. Ulab operates as an in-house venture of ITESO University. The
+                    fragmented nature of the university's digital tools and the evolving lifestyle of its community
+                    demanded a unified platform. I designed this solution to converge information for students, faculty,
+                    and employees while increasing the retention rate across all institutional systems.</span>
+            </p>
+
+            <!-- PMBT2 (FLAG-FIRST-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_FIRST_P" data-variant="true">Great choice to start with.<br>...<br><span
+                        class="destacado">Year:</span> 2023-2025<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, UX Research and Testing, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> Senior Designer and UX Tester</span>
+                <span data-flag="FLAG_FIRST_P" data-variant="false"><span class="destacado">Year:</span>
+                    2023-2025<br><span class="destacado">Skills:</span> UX/UI
+                    Design, Product Design, UX Research and Testing, User Journeys, Branding, Storytelling<br><span
+                        class="destacado">Role:</span> Senior Designer and UX Tester</span>
+            </p>
+
+            <!-- PMBT3 -->
+            <p class="pxbt motion-fade-move-up">
+                <span class="caption">(The following video provides an illustrative introduction to the
+                    project)<br><br></span>
+            </p>
+
+            <!-- PMF1: L+2 debajo de PMBT3 -->
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/MiITESO/MF1.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+
+            <!-- PMBT4: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                For this project, I worked with the university’s institutional identity while designing specifically for
+                a Liferay development (an open-source digital experience platform built for modular and unified
+                solutions). This technical framework provided a clear and decisive direction for the project from the
+                start.<br><br>My research led to the decision to incorporate gamification and experience personalization
+                to increase user retention. By encouraging the socialization of ideas and data, these features foster a
+                stronger sense of community and deeper integration into the university’s daily lifestyle.
+            </p>
+
+            <!-- PMF2-PMF4 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/MiITESO/MF2.jpg" alt="PMF2 — MIITESO" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF3.jpg" alt="PMF3 — MIITESO" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF4.jpg" alt="PMF4 — MIITESO" loading="lazy">
+            </div>
+
+            <!-- PMBT5: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                I implemented gamification through an Achievement and Reward system. As users complete both virtual and
+                physical tasks, the university leverages the platform to improve its internal KPIs. Users earn
+                achievements to personalize their experience and unlock rewards or discounts at on-campus stores.
+                Consequently, the university benefits from more active participation in document updates, event
+                attendance, group follow-ups, and service demand.<br><br>
+
+                <span class="caption">Certain screens are partially hidden to respect client confidentiality.
+                    <br>Images may unlock when the content is no longer sensitive.</span>
+            </p>
+
+            <!-- PMF5-PMF8 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/MiITESO/MF5.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/MiITESO/MF6.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF7.jpg" alt="PMF7 — MIITESO" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF8.jpg" alt="PMF8 — MIITESO" loading="lazy">
+            </div>
+
+            <!-- PMBT6: L+3/L+2 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                The project’s extensive scope inevitably required the involvement of multiple stakeholders across the
+                university to unify all systems and connect information. To address this, I incorporated representatives
+                from these various departments and conducted significantly broader UX testing, applying multiple rounds
+                of research and iterative adaptations.<br><br><br><br>
+            </p>
+
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF9.jpg" alt="PMF9 — MIITESO" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF10.jpg" alt="PMF10 — MIITESO" loading="lazy">
+            </div>
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/MiITESO/MF11.jpg" alt="PMF11 — MIITESO" loading="lazy">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

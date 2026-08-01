@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — OKDJ</title>
+    <meta name="description" content="Proyecto OKDJ — detalle del trabajo de diseño.">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+</head>
+
+<body class="page-light">
+    <div id="page-transition-overlay" style="background-color: var(--color-offwhite-alabaster-01);"></div>
+
+    <!-- MENU-BLANCO -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn" data-transition>CONTACT</a>
+        </div>
+        <div id="mbg-barra">
+            <a href="index.html" class="mbg-btn" data-transition>WORK</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (PP-O Matrix) -->
+    <main class="project-main main-container" aria-label="Proyecto OKDJ">
+        <div class="pp-grid">
+
+            <!-- PODT1: Título del Proyecto (TYPO-DISPLAY-2) -->
+            <h1 class="pxdt1 motion-fade-move-up">OKDJ<br>Booking Site</h1>
+
+            <!-- POBT1: Texto introductorio (FLAG-ALL-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_ALL_P" data-variant="true">Saved the best for last? I appreciate your thorough
+                    review of my work.<br>...<br>Designing the booking application for OKDJ was a brief yet highly
+                    engaging project. My client, a local DJ from Guadalajara with a unique profile, presented an
+                    intriguing creative challenge. At over 50 years old, his extensive musical background and deep
+                    technical knowledge set him apart in the industry. The primary hurdle was the branding: I had to
+                    manufacture a visual identity that harmonized his mature professional profile with the aesthetic
+                    expectations of a predominantly younger market.</span>
+                <span data-flag="FLAG_ALL_P" data-variant="false">Designing the booking application for OKDJ was a brief
+                    yet highly engaging project. My client, a local DJ from Guadalajara with a unique profile, presented
+                    an intriguing creative challenge. At over 50 years old, his extensive musical background and deep
+                    technical knowledge set him apart in the industry. The primary hurdle was the branding: I had to
+                    manufacture a visual identity that harmonized his mature professional profile with the aesthetic
+                    expectations of a predominantly younger market.</span>
+            </p>
+
+            <!-- POBT2: Texto (FLAG-FIRST-P) -->
+            <p class="pxbt motion-fade-move-up">
+                <span data-flag="FLAG_FIRST_P" data-variant="true">Great choice to start with.<br>...<br><span
+                        class="destacado">Year:</span> 2025<br><span class="destacado">Skills:</span> Branding, UX/UI
+                    Design, Animation, Illustration, Storytelling<br><span class="destacado">Role:</span> Designer and
+                    UX Tester</span>
+                <span data-flag="FLAG_FIRST_P" data-variant="false"><span class="destacado">Year:</span> 2025<br><span
+                        class="destacado">Skills:</span> Branding, UX/UI
+                    Design, Animation, Illustration, Storytelling<br><span class="destacado">Role:</span> Designer and
+                    UX Tester</span>
+            </p>
+
+            <!-- POBT3: Texto fijo (1 línea esperada) -->
+            <p class="pxbt motion-fade-move-up">
+                <span class="caption">(The following video provides an illustrative introduction to the
+                    project)<br><br></span>
+            </p>
+
+            <!-- POF1: COMP-FRAME — L+2 debajo de POBT3 -->
+            <div class="pp-frame pp-frame-first-always-2 motion-fade-move-up">
+                <video autoplay loop muted playsinline preload="metadata"
+                    style="width:100%; height:100%; object-fit:cover;">
+                    <source src="assets/OKDJ/OF1.mp4" type="video/mp4">
+                    <img src="none" alt="Fallback">
+                </video>
+            </div>
+
+            <!-- POBT4: Texto — L+3 desk/tab | L+2 mob debajo de POF1 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                Instead of hiding his age, I positioned it as a mark of experience and credibility. This strategy
+                preserves the trust of older clients while framing maturity as a competitive advantage for younger
+                audiences. The visual identity reflects this through a "contemporary vintage" aesthetic Bauhaus-ish
+                inspired structures blended with saturated gradients, grain textures, and abstract instrument
+                reinterpretations that reference various musical genres. <br><br>The logo, centered on a vinyl record
+                with a modern gradient, informs the site's motion language; interactions like form-filling and
+                transitions mimic the tactile experience of sliding a record into its sleeve, grounding the digital
+                experience in analog nostalgia.
+            </p>
+
+            <!-- POF2: COMP-FRAME — L+3 desk/tab | L+2 mob debajo de POBT4 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/OKDJ/OF2.jpg" alt="POF2 — OKDJ" loading="lazy">
+            </div>
+
+            <!-- POF3: Apilado L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/OKDJ/OF3.jpg" alt="POF3 — OKDJ" loading="lazy">
+            </div>
+
+            <!-- POF4: Apilado L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/OKDJ/OF4.jpg" alt="POF4 — OKDJ" loading="lazy">
+            </div>
+
+            <!-- POBT5: Texto — L+3 desk/tab | L+2 mob debajo de POF4 -->
+            <p class="pxbt pxbt-after-frame motion-fade-move-up">
+                The interface is designed for high-impact first impressions, using visual intensity to capture curiosity
+                before guiding users toward a streamlined three-section structure: Agenda, Experience, and Commercial
+                Contact. To bypass preconceived biases, I minimized personal data, allowing the site’s tone and
+                structure to build his professional persona.
+            </p>
+
+            <!-- POF5: COMP-FRAME — L+3 desk/tab | L+2 mob debajo de POBT5 -->
+            <div class="pp-frame pp-frame-first motion-fade-move-up">
+                <img src="assets/OKDJ/OF5.jpg" alt="POF5 — OKDJ" loading="lazy">
+            </div>
+
+            <!-- POF6: Apilado L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/OKDJ/OF6.jpg" alt="POF6 — OKDJ" loading="lazy">
+            </div>
+
+            <!-- POF7: Apilado L+1 -->
+            <div class="pp-frame pp-frame-stacked motion-fade-move-up">
+                <img src="assets/OKDJ/OF7.jpg" alt="POF7 — OKDJ" loading="lazy">
+            </div>
+
+        </div><!-- /pp-grid -->
+    </main>
+
+    <!-- FOOTER (idéntico al de work/about/contact) -->
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>

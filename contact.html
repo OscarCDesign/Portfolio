@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Contact</title>
+    <meta name="description" content="Ponte en contacto — correo, teléfono y referencias.">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Lógica (antes del render) -->
+    <meta name="portfolio-projects" content="vibec,swall,miiteso,okdj,nutd,nutm">
+    <script src="js/logic.js"></script>
+
+    <style>
+        body {
+            background-color: var(--color-blue-petroleum-01);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+
+        /* CONTENT GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            grid-auto-rows: auto;
+            width: 100%;
+            flex: 1 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: repeat(25, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .contact-grid {
+                grid-template-columns: repeat(42, 1fr);
+            }
+        }
+
+        /* CF1: Frame con borde naranja (invitation box) */
+        /* Desktop: C3L6–C40L20 | Tablet: C2L5–C24L17 | Mobile: C2L5–C12L24 */
+        .cf1 {
+            grid-column: 2 / 13;
+            margin-top: calc(var(--grid-row-height) * 4);
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01);
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-auto-rows: auto;
+            padding: calc(var(--grid-row-height) * 1) calc(100vw / 13);
+            /* 1L vertical, 1C lateral */
+        }
+
+        @media (min-width: 768px) {
+            .cf1 {
+                grid-column: 2 / 25;
+                grid-template-columns: repeat(23, 1fr);
+                padding: calc(var(--grid-row-height) * 1) calc(100vw / 25);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .cf1 {
+                grid-column: 3 / 41;
+                margin-top: calc(var(--grid-row-height) * 5);
+                grid-template-columns: repeat(38, 1fr);
+                padding: calc(var(--grid-row-height) * 1) calc(100vw / 42);
+            }
+        }
+
+        /* CF2: Fondo naranja sólido (dentro de CF1) */
+        .cf2 {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+            /* Ocupa todo CF1 internamente */
+            background-color: var(--color-orange-terracotta-01);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--grid-row-height) * 2) 1rem;
+        }
+
+        /* CTT1: Headline en CF2 (azul, sobre naranja) */
+        .ctt1 {
+            color: var(--color-blue-petroleum-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-size: 36pt;
+            line-height: 38pt;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .ctt1 {
+                font-size: 36pt;
+                line-height: 38pt;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .ctt1 {
+                font-size: 36pt;
+                line-height: 38pt;
+            }
+        }
+
+        /* CBT1: body (azul) */
+        .cbt1 {
+            color: var(--color-blue-petroleum-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 16pt;
+            line-height: 18pt;
+            margin-top: calc(var(--grid-row-height) * .5);
+            margin-bottom: calc(var(--grid-row-height) * 2);
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .cbt1 {
+                font-size: 16pt;
+                line-height: 18pt;
+            }
+        }
+
+        /* Íconos + labels (azul) */
+        .contact-icons-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: calc(100vw / 13 * 3);
+        }
+
+        @media (max-width: 767px) {
+            .contact-icons-row {
+                flex-direction: column;
+                align-items: center;
+                gap: calc(var(--grid-row-height) * 2);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-icons-row {
+                gap: calc(100vw / 25 * 4);
+            }
+        }
+
+        .contact-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(var(--grid-row-height) * 1);
+        }
+
+        .contact-icon-item img {
+            /* 2Cx2L */
+            width: calc(100vw / 13 * 2);
+            height: calc(var(--grid-row-height) * 2);
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            .contact-icon-item img {
+                width: calc(100vw / 25 * 2);
+            }
+        }
+
+        .contact-icon-label {
+            color: var(--color-blue-petroleum-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 12pt;
+            line-height: 15pt;
+            text-align: center;
+        }
+
+        /* CTT2, CBT4 — introducción comentarios */
+        .ctt2-wrap {
+            /* 2L debajo de CF1 */
+            grid-column: 2 / 13;
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--grid-row-height) * 1);
+            margin-top: calc(var(--grid-row-height) * 2);
+        }
+
+        @media (min-width: 768px) {
+            .ctt2-wrap {
+                grid-column: 2 / 25;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .ctt2-wrap {
+                grid-column: 3 / 41;
+            }
+        }
+
+        .ctt2 {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-size: 22pt;
+            line-height: 23pt;
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .ctt2 {
+                font-size: 36pt;
+                line-height: 38pt;
+            }
+        }
+
+        .cbt4 {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 16pt;
+            line-height: 18pt;
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .cbt4 {
+                font-size: 20pt;
+                line-height: 24pt;
+            }
+        }
+
+        /* SECCIÓN COMENTARIOS — 3 frames en fila (desk/tab) o columna (mob) */
+        .comments-row {
+            grid-column: 2 / 13;
+            display: flex;
+            flex-direction: column;
+            /* mobile: columna */
+            gap: calc(var(--grid-row-height) * 1);
+            margin-top: calc(var(--grid-row-height) * 2);
+        }
+
+        @media (min-width: 768px) {
+            .comments-row {
+                grid-column: 2 / 25;
+                flex-direction: row;
+                /* tablet/desktop: fila */
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .comments-row {
+                grid-column: 3 / 41;
+            }
+        }
+
+        /* CF3/4/5: Frame con borde naranja */
+        /* Desktop: 12Cx11L | Tablet: 7Cx14L | Mobile: 11Cx11L */
+        .comment-frame {
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: calc(var(--grid-row-height) * 8);
+            height: 100%;
+            padding: 24px;
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        @media (min-width: 768px) {
+            .comment-frame {
+                min-height: calc(var(--grid-row-height) * 11);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .comment-frame {
+                min-height: calc(var(--grid-row-height) * 11);
+            }
+        }
+
+        .cf-title {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-size: 18pt;
+            line-height: 18pt;
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .cf-title {
+                font-size: 24pt;
+                line-height: 26pt;
+            }
+        }
+
+        .cf-subtitle {
+            color: var(--color-orange-terracotta-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 12pt;
+            line-height: 15pt;
+            text-align: center;
+        }
+
+        .cf-body {
+            color: var(--color-offwhite-alabaster-01);
+            font-family: var(--font-ui);
+            font-optical-sizing: auto;
+            font-size: 12pt;
+            line-height: 15pt;
+            opacity: 0.7;
+            text-align: center;
+            margin-top: calc(var(--grid-row-height) * 1);
+            margin-bottom: calc(var(--grid-row-height) * 2);
+            flex: 1;
+        }
+
+        @media (min-width: 1280px) {
+            .cf-body {
+                font-size: 12pt;
+                line-height: 15pt;
+                opacity: 0.7;
+            }
+        }
+
+        .cf-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01) !important;
+            grid-column: 1 / span 4;
+            cursor: pointer;
+            font-family: var(--font-ui);
+            font-weight: 500;
+            font-size: 18pt;
+            color: var(--color-orange-terracotta-01);
+            line-height: normal;
+            text-decoration: none;
+            position: relative;
+            background-color: transparent;
+            transition: background-color 200ms ease, color 200ms ease;
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(var(--grid-row-height) * 3);
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .cf-btn {
+                font-size: 20pt;
+            }
+        }
+
+        .cf-btn:first-child {
+            border: var(--comp-border-width) solid var(--color-orange-terracotta-01) !important;
+        }
+
+        .cf-btn.active {
+            background-color: var(--color-orange-terracotta-01);
+            color: var(--color-blue-petroleum-01);
+            font-weight: 700;
+        }
+
+        .cf-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 12pt;
+            left: 50%;
+            height: 5pt;
+            width: 60%;
+            background-color: var(--color-offwhite-alabaster-01);
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            transition: transform 200ms var(--motion-ease-out-expo);
+        }
+
+        .cf-btn:not(.active):hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+
+
+        /* Footer*/
+        @media (max-width: 767px) {
+            .footer-item .typo-body-2 {
+                font-size: 10pt;
+                line-height: 15pt;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-item .typo-body-2 {
+                font-size: 10pt;
+                line-height: 15pt;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: calc(100vw / 13);
+            }
+
+            #fbt2 {
+                text-align: left;
+                justify-content: flex-start;
+                margin-top: 8px;
+            }
+
+            #fbt1 {
+                text-align: left;
+            }
+        }
+
+        .footer-container {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body class="page-dark">
+
+    <div id="page-transition-overlay"></div>
+
+    <!-- BARRA -->
+    <nav id="menu-barra" class="barra-visible">
+        <a href="index.html" id="mdt2" data-transition>OSCAR C.</a>
+        <div class="barra-nav">
+            <a href="index.html" class="barra-btn" data-transition>WORK</a>
+            <a href="about.html" class="barra-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="barra-btn active" data-transition>CONTACT</a>
+        </div>
+        <!-- MBG BARRA (Mobile Formula: 7 cols [4/3]) -->
+        <div id="mbg-barra">
+            <a href="contact.html" class="mbg-btn">CONTACT</a>
+            <div class="hamburger-trigger" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <button id="hamburger-btn" style="display:none;"></button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="mobile-menu-overlay" role="dialog" aria-hidden="true">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo" data-transition>OSCAR C.</a>
+            <div class="hamburger-trigger is-open" onclick="document.getElementById('hamburger-btn').click()">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="overlay-buttons">
+            <a href="index.html" class="mobile-menu-btn" data-transition>WORK</a>
+            <a href="about.html" class="mobile-menu-btn" data-transition>ABOUT</a>
+            <a href="contact.html" class="mobile-menu-btn" data-transition>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- CONTENIDO CONTACT -->
+    <main class="contact-grid main-container" aria-label="Contacto" style="flex:1;">
+
+        <!-- CF1: Frame con borde naranja — Invitation Box -->
+        <div class="cf1 motion-fade-move-up">
+            <!-- CF2: Fondo naranja sólido -->
+            <div class="cf2">
+                <!-- CTT1 (PROP-LOGIC FLAG-RECURRING) -->
+                <h1 class="ctt1" id="ctt1">
+                    <span data-flag="FLAG_RECURRING" data-variant="false">Let’s build something together.</span>
+                    <span data-flag="FLAG_RECURRING" data-variant="true">Nice to see you again.</span>
+                </h1>
+                <!-- CBT1 -->
+                <p class="cbt1" id="cbt1">Get in touch using the information below:</p>
+                <!-- Íconos CI1 (mail) + CI2 (phone) -->
+                <div class="contact-icons-row">
+                    <div class="contact-icon-item">
+                        <img src="assets/Contact/ícono_mail.png" alt="Email" class="contact-icon" id="ci1">
+                        <span class="contact-icon-label" id="cbt2">carreno_oscar@outlook.com</span>
+                    </div>
+                    <div class="contact-icon-item">
+                        <img src="assets/Contact/ícono_phone.png" alt="Teléfono" class="contact-icon" id="ci2">
+                        <span class="contact-icon-label" id="cbt3">+52 33 1225 2089</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTT2 + CBT4 — Introducción comentarios -->
+        <div class="ctt2-wrap motion-fade-move-up" style="grid-row: auto;">
+            <h2 class="ctt2" id="ctt2">ENDORSEMENTS</h2>
+            <p class="cbt4" id="cbt4">Feedback from people I’ve worked with and for.</p>
+        </div>
+
+        <!-- Sección de comentarios: CF3, CF4, CF5 -->
+        <div class="comments-row motion-fade-move-up">
+
+            <!-- CF3 -->
+            <div class="comment-frame" id="cf3">
+                <p class="cf-title" id="cbt5">Fernando Escobar</p>
+                <p class="cf-subtitle" id="cbt6">Client: Golondrinas</p>
+                <p class="cf-body" id="cbt7">"…has enriched the conception of the app…"</p>
+                <a href="Carta_Fernando.pdf" class="cf-btn" target="_blank" rel="noopener" download id="cbbt1">READ
+                    MORE</a>
+            </div>
+
+            <!-- CF4 -->
+            <div class="comment-frame" id="cf4">
+                <p class="cf-title" id="cbt8">Norma Villanueva</p>
+                <p class="cf-subtitle" id="cbt9">Employer: Ulab</p>
+                <p class="cf-body" id="cbt10">"…he performed outstandingly in each of the assigned projects."</p>
+                <a href="Carta_Norma.pdf" class="cf-btn" target="_blank" rel="noopener" download id="cbbt2">READ
+                    MORE</a>
+            </div>
+
+            <!-- CF5 -->
+            <div class="comment-frame" id="cf5">
+                <p class="cf-title" id="cbt11">Delia Ramírez</p>
+                <p class="cf-subtitle" id="cbt12">Client: Mi ITESO</p>
+                <p class="cf-body" id="cbt13">"He was efficient and professional; his work was marked by impressive
+                    speed."</p>
+                <a href="Carta_Delia.pdf" class="cf-btn" target="_blank" rel="noopener" download id="cbbt3">READ
+                    MORE</a>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer-container">
+        <div id="fbt1" class="footer-item">
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="false">®Oscar C. - 2026</span>
+            <span class="typo-body-2" data-flag="FLAG_ZERO_P" data-variant="true">A page explorer. I like that. ®Oscar
+                C. - 2026</span>
+        </div>
+        <div id="fbt2" class="footer-item">
+            <span class="typo-body-2">Guadalajara, Jal.</span>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Debug & Stress Test (Cargar al final) -->
+    <script src="js/debug-panel.js"></script>
+    <script src="js/logic-stress-test.js"></script>
+</body>
+
+</html>
